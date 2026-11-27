@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bhupendra Singh Deora -- Data Analyst</title>
+<meta name="description" content="Fresher Data Analyst. Excel, Power BI, MySQL and Python dashboards.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA}
+main{background:#0C0C0C;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+.hh{background:linear-gradient(180deg,#646973 0%,#BBCCD7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.h2{font-weight:900;text-transform:uppercase;line-height:1;letter-spacing:-.025em;text-align:center;font-size:clamp(3rem,12vw,160px)}
+.fi{opacity:0;transform:translate(var(--x,0),var(--y,30px));transition:opacity .7s cubic-bezier(.25,.1,.25,1) var(--d,0s),transform .7s cubic-bezier(.25,.1,.25,1) var(--d,0s)}
+.fi.in{opacity:1;transform:none}
+.cbtn{display:inline-block;border-radius:999px;color:#fff;font-weight:500;text-transform:uppercase;letter-spacing:.1em;padding:14px 32px;font-size:.8rem;background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);box-shadow:0 4px 4px rgba(181,1,167,.25),4px 4px 12px #7721B1 inset;outline:2px solid #fff;outline-offset:-3px}
+.lbtn{display:inline-block;border:2px solid #D7E2EA;border-radius:999px;padding:12px 32px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:.9rem;transition:background .2s}
+.lbtn:hover{background:rgba(215,226,234,.1)}
+a:focus-visible{outline:3px solid #BBCCD7;outline-offset:3px}
+/* hero */
+.hero{height:100vh;min-height:560px;display:flex;flex-direction:column;position:relative;overflow-x:clip;padding:0 24px}
+nav{display:flex;justify-content:space-between;padding-top:28px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(.85rem,1.8vw,1.4rem)}
+nav a{transition:opacity .2s}nav a:hover{opacity:.7}
+.hero h1{font-weight:900;text-transform:uppercase;letter-spacing:-.025em;line-height:1;white-space:nowrap;width:100%;font-size:clamp(2.2rem,10.2vw,12rem);margin-top:24px;overflow:hidden;padding-bottom:.1em}
+.bar{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:36px;position:relative;z-index:20}
+.bar p{font-weight:300;text-transform:uppercase;letter-spacing:.03em;line-height:1.25;font-size:clamp(.75rem,1.4vw,1.5rem);max-width:min(260px,40vw)}
+.portrait{position:absolute;left:50%;transform:translateX(-50%);bottom:0;z-index:10;width:clamp(240px,38vw,520px)}
+.mono{aspect-ratio:3/4;border-radius:200px 200px 0 0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:clamp(5rem,14vw,11rem);background:linear-gradient(180deg,#1b2530,#0C0C0C);border:2px solid #243241;border-bottom:0}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:200px 200px 0 0}
+/* marquee */
+.mq{padding:clamp(6rem,10vw,10rem) 0 40px;overflow:hidden}
+.row{display:flex;gap:12px;width:max-content;will-change:transform;margin-bottom:12px}
+.tile{width:420px;height:270px;border-radius:16px;flex:none;display:flex;align-items:flex-end;padding:20px;font-weight:700;font-size:1.8rem;text-transform:uppercase;letter-spacing:-.01em;color:#fff}
+/* about */
+.about{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(40px,5vw,64px);padding:80px 24px;position:relative;overflow:hidden}
+.dec{position:absolute;width:clamp(100px,16vw,210px);opacity:.9}
+.dec svg{width:100%;height:auto}
+.tl{top:4%;left:3%}.tr{top:4%;right:3%}.bl{bottom:8%;left:8%;width:clamp(90px,13vw,180px)}.br{bottom:8%;right:8%;width:clamp(100px,14vw,200px)}
+.about p{max-width:560px;text-align:center;font-weight:500;line-height:1.7;font-size:clamp(1rem,2vw,1.35rem);position:relative;z-index:2}
+.w{display:inline-block;white-space:nowrap}.ch{transition:opacity .15s}
+/* services */
+.svc{background:#fff;color:#0C0C0C;border-radius:60px 60px 0 0;padding:clamp(80px,8vw,128px) 24px}
+.svc .h2{margin-bottom:clamp(64px,7vw,112px)}
+.list{max-width:64rem;margin:0 auto}
+.it{display:flex;gap:clamp(16px,4vw,48px);align-items:flex-start;padding:clamp(32px,4vw,48px) 0;border-top:1px solid rgba(12,12,12,.15)}
+.it:last-child{border-bottom:1px solid rgba(12,12,12,.15)}
+.num{font-weight:900;line-height:1;font-size:clamp(3rem,10vw,140px)}
+.it h3{font-weight:500;text-transform:uppercase;font-size:clamp(1rem,2.2vw,2.1rem);margin-bottom:8px}
+.it p{font-weight:300;line-height:1.7;max-width:42rem;opacity:.6;font-size:clamp(.85rem,1.6vw,1.25rem)}
+/* projects */
+.pj{background:#0C0C0C;border-radius:60px 60px 0 0;margin-top:-56px;position:relative;z-index:10;padding:clamp(80px,8vw,128px) 20px 80px}
+.pj .h2{margin-bottom:clamp(48px,6vw,96px)}
+.stack{max-width:72rem;margin:0 auto}
+.wrap{height:85vh;position:relative}
+.card{position:sticky;top:112px;border:2px solid #D7E2EA;border-radius:clamp(40px,6vw,60px);background:#0C0C0C;padding:clamp(16px,3vw,32px);transform-origin:top center;will-change:transform}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:clamp(14px,2vw,24px);padding:0 8px}
+.top .l{display:flex;align-items:center;gap:clamp(12px,3vw,32px)}
+.top .num{font-size:clamp(3rem,8vw,110px)}
+.cat{font-weight:300;opacity:.7;font-size:clamp(.8rem,1.3vw,1.1rem)}
+.nm{font-weight:500;text-transform:uppercase;font-size:clamp(1rem,2.2vw,2rem);line-height:1.1}
+.imgs{display:flex;gap:12px}
+.c1{width:40%;display:flex;flex-direction:column;gap:12px}.c2{width:60%}
+.ph{position:relative;border-radius:clamp(28px,5vw,60px);overflow:hidden;background:linear-gradient(135deg,#16222d,#0e1720);display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;font-size:.8rem;font-weight:300;color:#7d8d9b}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.a{height:clamp(130px,16vw,230px)}.b{height:clamp(160px,22vw,340px)}.c{height:calc(clamp(130px,16vw,230px) + clamp(160px,22vw,340px) + 12px)}
+.chips{padding:0 8px 12px;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.chips span{border:1px solid #384856;border-radius:99px;padding:2px 12px;font-size:.8rem}
+footer{padding:48px 24px 64px;text-align:center;border-top:1px solid #1d2933;font-weight:300}
+footer a{text-decoration:underline;margin:0 8px}
+@media(max-width:640px){.tile{width:300px;height:200px;font-size:1.3rem}.svc,.pj{border-radius:40px 40px 0 0}.top .l{gap:12px}}
+@media(prefers-reduced-motion:reduce){.fi{transition:none}.ch{transition:none}}
+</style></head><body><main>
+
+<section class="hero" id="top">
+<nav class="fi" style="--y:-20px"><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+<div class="fi" style="--y:40px;--d:.15s;overflow:hidden"><h1 class="hh">Hi, i&apos;m bhupendra</h1></div>
+<div class="portrait fi" style="--d:.6s"><div id="mag"><div class="mono hh">BD</div><img src="photo.jpg" alt="Bhupendra Singh Deora" onerror="this.remove()"></div></div>
+<div class="bar"><p class="fi" style="--d:.35s;--y:20px">a data analyst turning raw numbers into clear, useful dashboards</p>
+<a class="cbtn fi" style="--d:.5s;--y:20px" href="#contact">Contact Me</a></div>
+</section>
+
+<section class="mq" id="mq"><div class="row" id="r1"></div><div class="row" id="r2"></div></section>
+
+<section class="about" id="about">
+<div class="dec tl fi" style="--x:-80px;--y:0;--d:.1s"><svg viewBox="0 0 100 100" fill="none" stroke="#BBCCD7" stroke-width="3"><rect x="14" y="52" width="16" height="34"/><rect x="42" y="30" width="16" height="56"/><rect x="70" y="14" width="16" height="72"/></svg></div>
+<div class="dec bl fi" style="--x:-80px;--y:0;--d:.25s"><svg viewBox="0 0 100 100" fill="none" stroke="#7621B0" stroke-width="3"><ellipse cx="50" cy="22" rx="32" ry="12"/><path d="M18 22v56c0 7 14 12 32 12s32-5 32-12V22M18 50c0 7 14 12 32 12s32-5 32-12"/></svg></div>
+<div class="dec tr fi" style="--x:80px;--y:0;--d:.15s"><svg viewBox="0 0 100 100" fill="none" stroke="#B600A8" stroke-width="3"><circle cx="50" cy="50" r="34"/><path d="M50 50V16M50 50l24 24"/></svg></div>
+<div class="dec br fi" style="--x:80px;--y:0;--d:.3s"><svg viewBox="0 0 100 100" fill="none" stroke="#BE4C00" stroke-width="3"><rect x="14" y="14" width="72" height="72"/><path d="M14 38h72M14 62h72M38 14v72M62 14v72"/></svg></div>
+<h2 class="h2 hh fi">About me</h2>
+<p id="ap">I am a fresher Data Analyst skilled in Excel, Power BI, MySQL and Python. I clean messy data, find the story inside it and present it as dashboards people can act on. Let's turn your data into decisions!</p>
+<a class="cbtn" href="#contact">Contact Me</a>
+</section>
+
+<section class="svc" id="services"><h2 class="h2 fi">Services</h2><div class="list" id="sl"></div></section>
+
+<section class="pj" id="projects"><h2 class="h2 hh fi">Projects</h2><div class="stack" id="stack"></div></section>
+
+<footer id="contact"><p style="margin-bottom:20px;font-size:1.2rem">Have a data project? Let's talk.</p>
+<a class="cbtn" href="mailto:bhupendrasinghdeora24@gmail.com">bhupendrasinghdeora24@gmail.com</a>
+<p style="margin-top:28px"><a href="https://www.linkedin.com/in/bhupendra-singh-deora">LinkedIn</a><a href="https://github.com/bhupendra272003">GitHub</a></p></footer>
+</main>
+<script>
+const $=s=>document.querySelector(s),clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+// fade-in
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'50px'});
+const fi=()=>document.querySelectorAll('.fi:not(.in)').forEach(e=>io.observe(e));
+// marquee
+const tools=[['Excel','#0f5132'],['Power BI','#8a6d00'],['MySQL','#0b4f7a'],['Python','#3b5b00'],['DAX','#5a1a7a'],['PivotTables','#7a2a00'],['Data Cleaning','#0b6e6e'],['SQL Window Functions','#7a0a4a'],['KPI Dashboards','#233b7a'],['Slicers','#4a4a00'],['Pandas','#2a2a7a']];
+const tools2=[['INDEX-MATCH','#0b6e6e'],['SUMIFS','#7a2a00'],['COUNTIFS','#5a1a7a'],['Drill-through','#233b7a'],['ETL','#0f5132'],['Validation Queries','#8a6d00'],['Joins','#0b4f7a'],['Data Modelling','#7a0a4a'],['Reporting','#3b5b00'],['MIS','#2a2a7a']];
+const mk=(a,r)=>{const h=[...a,...a,...a].map(([t,c])=>`<div class="tile" style="background:linear-gradient(135deg,${c},#0C0C0C)">${t}</div>`).join('');r.innerHTML=h};
+mk(tools,$('#r1'));mk(tools2,$('#r2'));
+// about text
+const ap=$('#ap'),txt=ap.textContent;ap.innerHTML=txt.split(' ').map(w=>`<span class="w">${[...w].map(c=>`<span class="ch" style="opacity:.2">${c}</span>`).join('')}</span>`).join(' ');
+const chs=[...ap.querySelectorAll('.ch')];
+// services
+const svc=[['Excel Dashboards','Interactive dashboards with PivotTables, slicers and KPI cards that make monthly reporting quick and clear.'],['Power BI Reports','Data models, DAX measures and multi-page reports with drill-through for deeper analysis.'],['SQL Analysis','MySQL queries, joins and window functions to answer business questions straight from the database.'],['Data Cleaning','Fixing missing values, duplicates and wrong formats in Excel, SQL or Python so the numbers can be trusted.'],['Python Automation','Pandas scripts and loaders that clean and move data automatically, so reports refresh without manual work.']];
+$('#sl').innerHTML=svc.map(([n,d],i)=>`<div class="it fi" style="--d:${i*.1}s"><div class="num">0${i+1}</div><div><h3>${n}</h3><p>${d}</p></div></div>`).join('');
+// projects
+const P=[['BFSI Customer & Loan Analytics','Excel | Customer & loan insights','excel',['Excel','PivotTables','Slicers','INDEX-MATCH','SUMIFS','COUNTIFS'],'https://github.com/bhupendra272003?tab=repositories'],
+['Bank Analytics Dashboard','MySQL | Python | Power BI','bank',['MySQL','Python','Power BI','7 pages','Drill-through'],'https://github.com/bhupendra272003?tab=repositories'],
+['Logistics & Supply Chain Performance','MySQL | Python | Power BI','logistics',['MySQL','Python','Power BI','Data cleaning'],'https://github.com/bhupendra272003/Logistics-Supply-Chain-Analytics'],
+['Inside Airbnb San Diego','MySQL | Python | Power BI','airbnb',['MySQL','Window functions','Python','Power BI'],'https://github.com/bhupendra272003?tab=repositories'],
+['Sales Dashboard','Python | Power BI | DAX','sales',['Python ETL','DAX','Python visuals','4 pages'],'https://github.com/bhupendra272003?tab=repositories']];
+const ph=(k,n,c)=>`<div class="ph ${c}">Dashboard preview<img src="images/${k}-${n}.jpg" alt="" loading="lazy" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.src.replace('.jpg','.png')}else this.remove()"></div>`;
+$('#stack').innerHTML=P.map(([n,cat,k,ch,u],i)=>`<div class="wrap"><article class="card" style="top:calc(112px + ${i*28}px)"><div class="top"><div class="l"><div class="num">0${i+1}</div><div><div class="cat">${cat}</div><div class="nm">${n}</div></div></div><a class="lbtn" href="${u}">View on GitHub</a></div><div class="chips">${ch.map(c=>`<span>${c}</span>`).join('')}</div><div class="imgs"><div class="c1">${ph(k,1,'a')}${ph(k,2,'b')}</div><div style="width:60%">${ph(k,3,'c')}</div></div></article></div>`).join('');
+const cards=[...document.querySelectorAll('.card')];
+// scroll effects
+const r1=$('#r1'),r2=$('#r2'),mq=$('#mq'),st=$('#stack');
+function onScroll(){
+ const vh=innerHeight,top=mq.getBoundingClientRect().top+scrollY,off=(scrollY-top+vh)*.3;
+ r1.style.transform=`translateX(${off-200}px)`;r2.style.transform=`translateX(${-(off-200)}px)`;
+ const rc=ap.getBoundingClientRect(),p=clamp((.8*vh-rc.top)/(.6*vh+rc.height)),N=chs.length;
+ chs.forEach((c,i)=>{c.style.opacity=.2+.8*clamp(p*N-i)});
+ const sr=st.getBoundingClientRect(),sp=clamp(-sr.top/(sr.height-vh)),n=cards.length;
+ cards.forEach((c,i)=>{const t=1-(n-1-i)*.03,s=1-(1-t)*clamp((sp-i/n)/(1-i/n));c.style.transform=`scale(${s})`});
+}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();fi();
+// magnet
+const m=$('#mag'),pad=150,str=3;
+addEventListener('mousemove',e=>{const r=m.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,dx=Math.abs(cx-e.clientX),dy=Math.abs(cy-e.clientY);
+ if(dx<r.width/2+pad&&dy<r.height/2+pad){m.style.transition='transform .3s ease-out';m.style.transform=`translate3d(${(e.clientX-cx)/str}px,${(e.clientY-cy)/str}px,0)`}
+ else{m.style.transition='transform .6s ease-in-out';m.style.transform='translate3d(0,0,0)'}});
+m.style.willChange='transform';
+</script></body></html>
