@@ -1,194 +1,30 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bhupendra Singh Deora -- Data Analyst</title>
-<meta name="description" content="Fresher Data Analyst. Excel, Power BI, MySQL and Python dashboards.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bhupendra Singh Deora | Data Analyst</title><meta name="description" content="Bhupendra Singh Deora — entry-level Data Analyst focused on Excel, SQL, Python and Power BI.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:#0C0C0C;font-family:'DM Sans',sans-serif;color:#D7E2EA}
-main{background:#0C0C0C;overflow-x:clip}
-a{color:inherit;text-decoration:none}
-.hh{background:linear-gradient(180deg,#646973 0%,#BBCCD7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-.h2{font-weight:900;text-transform:uppercase;line-height:1;letter-spacing:-.025em;text-align:center;font-size:clamp(3rem,12vw,160px)}
-.fi{opacity:0;transform:translate(var(--x,0),var(--y,30px));transition:opacity .7s cubic-bezier(.25,.1,.25,1) var(--d,0s),transform .7s cubic-bezier(.25,.1,.25,1) var(--d,0s)}
-.fi.in{opacity:1;transform:none}
-.cbtn{display:inline-block;border-radius:999px;color:#fff;font-weight:500;text-transform:uppercase;letter-spacing:.1em;padding:14px 32px;font-size:.8rem;background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);box-shadow:0 4px 4px rgba(181,1,167,.25),4px 4px 12px #7721B1 inset;outline:2px solid #fff;outline-offset:-3px}
-.lbtn{display:inline-block;border:2px solid #D7E2EA;border-radius:999px;padding:12px 32px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:.9rem;transition:background .2s}
-.lbtn:hover{background:rgba(215,226,234,.1)}
-a:focus-visible{outline:3px solid #BBCCD7;outline-offset:3px}
-/* hero */
-.hero{height:100vh;min-height:560px;display:flex;flex-direction:column;position:relative;overflow-x:clip;padding:0 24px}
-nav{display:flex;justify-content:space-between;padding-top:28px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(.85rem,1.8vw,1.4rem)}
-nav a{transition:opacity .2s}nav a:hover{opacity:.7}
-.hero h1{font-weight:900;text-transform:uppercase;letter-spacing:-.025em;line-height:1;white-space:nowrap;width:100%;font-size:clamp(2.2rem,10.2vw,12rem);margin-top:24px;overflow:hidden;padding-bottom:.1em}
-.bar{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:36px;position:relative;z-index:20}
-.bar p{font-weight:300;text-transform:uppercase;letter-spacing:.03em;line-height:1.25;font-size:clamp(.75rem,1.4vw,1.5rem);max-width:min(260px,40vw)}
-.portrait{position:absolute;left:50%;transform:translateX(-50%);bottom:0;z-index:10;width:clamp(240px,38vw,520px)}
-.mono{aspect-ratio:3/4;border-radius:200px 200px 0 0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:clamp(5rem,14vw,11rem);background:linear-gradient(180deg,#1b2530,#0C0C0C);border:2px solid #243241;border-bottom:0}
-.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:200px 200px 0 0}
-/* marquee */
-.mq{padding:clamp(6rem,10vw,10rem) 0 40px;overflow:hidden}
-.row{display:flex;gap:12px;width:max-content;will-change:transform;margin-bottom:12px}
-.tile{width:420px;height:270px;border-radius:16px;flex:none;display:flex;align-items:flex-end;padding:20px;font-weight:700;font-size:1.8rem;text-transform:uppercase;letter-spacing:-.01em;color:#fff}
-/* about */
-.about{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(40px,5vw,64px);padding:80px 24px;position:relative;overflow:hidden}
-.dec{position:absolute;width:clamp(100px,16vw,210px);opacity:.9}
-.dec svg{width:100%;height:auto}
-.tl{top:4%;left:3%}.tr{top:4%;right:3%}.bl{bottom:8%;left:8%;width:clamp(90px,13vw,180px)}.br{bottom:8%;right:8%;width:clamp(100px,14vw,200px)}
-.about p{max-width:560px;text-align:center;font-weight:500;line-height:1.7;font-size:clamp(1rem,2vw,1.35rem);position:relative;z-index:2}
-.w{display:inline-block;white-space:nowrap}.ch{transition:opacity .15s}
-/* services */
-.svc{background:#fff;color:#0C0C0C;border-radius:60px 60px 0 0;padding:clamp(80px,8vw,128px) 24px}
-.svc .h2{margin-bottom:clamp(64px,7vw,112px)}
-.list{max-width:64rem;margin:0 auto}
-.it{display:flex;gap:clamp(16px,4vw,48px);align-items:flex-start;padding:clamp(32px,4vw,48px) 0;border-top:1px solid rgba(12,12,12,.15)}
-.it:last-child{border-bottom:1px solid rgba(12,12,12,.15)}
-.num{font-weight:900;line-height:1;font-size:clamp(3rem,10vw,140px)}
-.it h3{font-weight:500;text-transform:uppercase;font-size:clamp(1rem,2.2vw,2.1rem);margin-bottom:8px}
-.it p{font-weight:300;line-height:1.7;max-width:42rem;opacity:.6;font-size:clamp(.85rem,1.6vw,1.25rem)}
-/* projects */
-.pj{background:#0C0C0C;border-radius:60px 60px 0 0;margin-top:-56px;position:relative;z-index:10;padding:clamp(80px,8vw,128px) 20px 80px}
-.pj .h2{margin-bottom:clamp(48px,6vw,96px)}
-.stack{max-width:72rem;margin:0 auto}
-.wrap{height:85vh;position:relative}
-.card{position:sticky;top:112px;border:2px solid #D7E2EA;border-radius:clamp(40px,6vw,60px);background:#0C0C0C;padding:clamp(16px,3vw,32px);transform-origin:top center;will-change:transform}
-.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:clamp(14px,2vw,24px);padding:0 8px}
-.top .l{display:flex;align-items:center;gap:clamp(12px,3vw,32px)}
-.top .num{font-size:clamp(3rem,8vw,110px)}
-.cat{font-weight:300;opacity:.7;font-size:clamp(.8rem,1.3vw,1.1rem)}
-.nm{font-weight:500;text-transform:uppercase;font-size:clamp(1rem,2.2vw,2rem);line-height:1.1}
-.imgs{display:flex;gap:12px}
-.c1{width:40%;display:flex;flex-direction:column;gap:12px}.c2{width:60%}
-.ph{position:relative;border-radius:clamp(28px,5vw,60px);overflow:hidden;background:linear-gradient(135deg,#16222d,#0e1720);display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;font-size:.8rem;font-weight:300;color:#7d8d9b}
-.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.a{height:clamp(130px,16vw,230px)}.b{height:clamp(160px,22vw,340px)}.c{height:calc(clamp(130px,16vw,230px) + clamp(160px,22vw,340px) + 12px)}
-.chips{padding:0 8px 12px;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
-.chips span{border:1px solid #384856;border-radius:99px;padding:2px 12px;font-size:.8rem}
-footer{padding:48px 24px 64px;text-align:center;border-top:1px solid #1d2933;font-weight:300}
-footer a{text-decoration:underline;margin:0 8px}
-@media(max-width:640px){.tile{width:300px;height:200px;font-size:1.3rem}.svc,.pj{border-radius:40px 40px 0 0}.top .l{gap:12px}}
-@media(prefers-reduced-motion:reduce){.fi{transition:none}.ch{transition:none}}
-/* Polished typography, layout and responsive project cards */
-:root{--ink:#0a0e13;--muted:#9aabb9;--line:#263442}
-html{scroll-behavior:smooth;scroll-padding-top:24px}body{font-size:16px;line-height:1.6;background:var(--ink)}
-.hh{background:linear-gradient(110deg,#f5f8fb 10%,#8bd3ff 65%,#b9a5ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.6rem,8vw,7.5rem);letter-spacing:-.06em;line-height:.98}
-.hero{height:min(100svh,950px);min-height:640px;padding-inline:clamp(22px,5vw,80px);background:radial-gradient(ellipse at 50% 60%,#172532 0%,transparent 48%)}
-nav{font-family:'Space Grotesk',sans-serif;font-size:.92rem;letter-spacing:.04em}nav a{padding:9px 12px;border-radius:99px}nav a:hover{background:#1c2835;opacity:1}
-.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.4rem,9vw,9rem);letter-spacing:-.07em;line-height:.95;text-align:center}
-.cbtn{background:linear-gradient(135deg,#60a5fa,#8b5cf6);box-shadow:0 10px 35px #6052bb33;outline:0;padding:13px 24px;font-family:'Space Grotesk',sans-serif;letter-spacing:.03em;text-transform:none;font-weight:700;transition:transform .2s}.cbtn:hover{transform:translateY(-2px)}
-.lbtn{border:1px solid #42576a;padding:10px 18px;font-size:.78rem;text-transform:none;letter-spacing:.02em;border-radius:14px}
-.bar p{font-size:clamp(.85rem,1.3vw,1.05rem);max-width:300px;text-transform:none;color:#b6c4d0}
-.mq{padding:70px 0 50px}.tile{width:300px;height:170px;border-radius:18px;font-family:'Space Grotesk',sans-serif;font-size:1.2rem;text-transform:none;align-items:center;justify-content:center;background:#111a24!important;color:#c9e6fa;border:1px solid #ffffff12}
-.about{min-height:75vh;background:linear-gradient(180deg,#0a0e13,#101720);padding:110px 24px;gap:34px}.about p{font-weight:400;color:#bdcbd7;max-width:680px;font-size:clamp(1rem,1.7vw,1.2rem)}
-.svc{background:#eaf1f6;color:#111923;border-radius:32px 32px 0 0;padding:clamp(70px,8vw,110px) clamp(20px,5vw,72px)}.svc .h2{font-family:'Space Grotesk',sans-serif;margin-bottom:55px}.it{gap:30px;padding:30px 0}.num{font-family:'Space Grotesk',sans-serif;color:#53697d}.it h3{font-family:'Space Grotesk',sans-serif;text-transform:none;font-weight:700}.it p{font-size:1rem;opacity:.75}
-.pj{border-radius:32px 32px 0 0;margin-top:-28px;padding:90px clamp(18px,4vw,56px);background:#0a0e13}.stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;max-width:1250px}.wrap{height:auto;position:static}.card{position:relative;top:auto!important;border:1px solid #253646;border-radius:26px;background:linear-gradient(160deg,#121b25,#0e141b);padding:24px;transform:none!important;transition:border-color .25s,transform .25s,box-shadow .25s;height:100%}.card:hover{transform:translateY(-5px)!important;border-color:#6e9bbd;box-shadow:0 16px 45px #0005}.top{padding:0;margin-bottom:18px}.top .num{font-size:2.6rem;color:#86bfe3}.cat{font-size:.82rem;color:#9fb3c5;opacity:1}.nm{font-family:'Space Grotesk',sans-serif;text-transform:none;font-size:1.25rem;font-weight:700}.chips{padding:0;margin:0 0 18px;gap:7px}.chips span{font-size:.72rem;padding:4px 10px;border-color:#344858;color:#c0d0dc}.imgs{gap:10px}.c1{width:43%;gap:10px}.ph{border-radius:14px;color:#a2b8c8}.a{height:125px}.b{height:145px}.c{height:280px}
-footer{padding:70px 24px;background:#0d131a;color:#c3d0da;border-top:1px solid #253442}footer a:not(.cbtn){text-decoration:none;color:#a9cde7}
-@media(max-width:900px){.stack{grid-template-columns:1fr;max-width:760px}.hero{min-height:600px}}
-@media(max-width:640px){.hero{min-height:650px;height:88svh;padding:0 18px}nav{font-size:.75rem;gap:2px}nav a{padding:7px 8px}.hero h1{white-space:normal;font-size:clamp(2.2rem,11vw,4rem);margin-top:50px}.portrait{width:72vw;max-width:330px}.bar{align-items:flex-end;gap:12px}.bar p{max-width:48%;font-size:.78rem}.cbtn{padding:12px 17px}.tile{width:220px;height:130px;font-size:1rem}.mq{padding:50px 0 25px}.about{min-height:auto;padding:80px 22px}.dec{opacity:.25}.svc,.pj{border-radius:24px 24px 0 0}.it{gap:15px}.it h3{font-size:1.1rem}.it p{font-size:.9rem}.pj{padding:65px 14px}.card{padding:16px;border-radius:20px}.top{align-items:flex-start}.top .num{font-size:2rem}.nm{font-size:1rem}.lbtn{padding:8px 12px}.chips{gap:5px}.chips span{font-size:.68rem;padding:3px 8px}.imgs{gap:7px}.c1{gap:7px;width:42%}.a{height:100px}.b{height:125px}.c{height:232px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card:hover{transform:none!important}}
-
-/* Gradient editorial-inspired portfolio refresh */
-body{background:#080b12;color:#eaf2ff}
-main{background:#080b12}
-.hero{isolation:isolate;position:relative;background:radial-gradient(ellipse at 75% 30%,#35215c88 0,transparent 36%),radial-gradient(ellipse at 25% 72%,#0e477488 0,transparent 42%),#080b12}
-.hero:before{content:"";position:absolute;z-index:-1;width:min(58vw,760px);aspect-ratio:1;left:50%;top:42%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 30% 30%,#6c8bff 0,#7b3ce2 26%,#143f72 52%,transparent 72%);filter:blur(45px);opacity:.36;animation:orbPulse 9s ease-in-out infinite alternate}
-.hero:after{content:"";position:absolute;z-index:-1;inset:0;opacity:.14;background-image:radial-gradient(#a7c8ff 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
-@keyframes orbPulse{from{transform:translate(-52%,-48%) scale(.92)}to{transform:translate(-48%,-52%) scale(1.08)}}
-.hero-copy{position:relative;z-index:5;margin-top:clamp(38px,7vh,80px);text-align:center}
-.eyebrow{display:inline-block;border:1px solid #9eb5ff38;background:#151b2b99;border-radius:999px;padding:7px 16px;color:#a9c8ff;font-size:.72rem;font-weight:700;letter-spacing:.18em}
-.hero h1{margin-top:24px;white-space:normal;text-align:center;font-size:clamp(3.4rem,10.4vw,10rem);line-height:.88}
-.hero-sub{margin:20px auto 0;color:#bac7db;font-size:clamp(.9rem,1.5vw,1.15rem);letter-spacing:.015em}
-.portrait{filter:drop-shadow(0 22px 80px #6744ca2b)}
-.mono{background:linear-gradient(145deg,#1c2740,#12182a);border-color:#9cbaff33;box-shadow:0 0 50px #8354ff20}
-.cbtn{background:linear-gradient(120deg,#5b8dff,#8957e9 65%,#bc70ff);border:1px solid #ffffff22}
-.mq{position:relative}.row .tile{background:linear-gradient(145deg,#121d31,#10131e)!important;border-color:#829fff20;color:#bcd7ff;box-shadow:0 10px 40px #0003}
-.about{background:radial-gradient(ellipse at 50% 50%,#17253a,#080b12 70%);border-block:1px solid #ffffff08}
-.about .h2{background:linear-gradient(120deg,#eff5ff,#89b9ff 45%,#bd94ff);background-clip:text}
-.dec svg{filter:drop-shadow(0 0 16px #7e77ff30)}
-.svc{background:linear-gradient(140deg,#eaf2ff,#dce5f4);color:#121a28}
-.svc .h2{color:#121a28}
-.it{border-color:#17253a18}.num{color:#617a9a}
-.pj{background:radial-gradient(ellipse at 20% 0%,#172139,#080b12 55%);border-top:1px solid #ffffff08}
-.card{background:linear-gradient(145deg,#141d2d,#0d121d);border-color:#263a56;box-shadow:0 18px 70px #0002}
-.card:hover{border-color:#779cff;box-shadow:0 20px 80px #617cff15}
-.chips span{background:#172337;border-color:#304560;color:#c5d8f2}
-.ph{background:linear-gradient(145deg,#1d3451,#151c2d);outline:1px solid #ffffff08}
-footer{background:radial-gradient(ellipse at 50% 0%,#17213a,#080b12 70%);border-color:#26344a}
-@media(max-width:640px){.hero-copy{margin-top:35px}.hero h1{font-size:clamp(3rem,13vw,5rem)}.hero:before{width:88vw;filter:blur(32px)}}
-@media(prefers-reduced-motion:reduce){.hero:before{animation:none}}
-</style></head><body><main>
-
-<section class="hero" id="top">
-<nav class="fi" style="--y:-20px"><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
-<div class="hero-copy fi" style="--y:40px;--d:.15s;overflow:hidden"><span class="eyebrow">DATA • INSIGHTS • DECISIONS</span><h1 class="hh">Hi, i&apos;m<br>Bhupendra</h1><p class="hero-sub">Turning complex data into clear business stories.</p></div>
-<div class="portrait fi" style="--d:.6s"><div id="mag"><div class="mono hh">BD</div><img src="photo.jpg" alt="Bhupendra Singh Deora" onerror="this.remove()"></div></div>
-<div class="bar"><p class="fi" style="--d:.35s;--y:20px">Data Analyst · Excel · SQL · Python · Power BI</p>
-<a class="cbtn fi" style="--d:.5s;--y:20px" href="#contact">Contact Me</a></div>
-</section>
-
-<section class="mq" id="mq"><div class="row" id="r1"></div><div class="row" id="r2"></div></section>
-
-<section class="about" id="about">
-<div class="dec tl fi" style="--x:-80px;--y:0;--d:.1s"><svg viewBox="0 0 100 100" fill="none" stroke="#BBCCD7" stroke-width="3"><rect x="14" y="52" width="16" height="34"/><rect x="42" y="30" width="16" height="56"/><rect x="70" y="14" width="16" height="72"/></svg></div>
-<div class="dec bl fi" style="--x:-80px;--y:0;--d:.25s"><svg viewBox="0 0 100 100" fill="none" stroke="#7621B0" stroke-width="3"><ellipse cx="50" cy="22" rx="32" ry="12"/><path d="M18 22v56c0 7 14 12 32 12s32-5 32-12V22M18 50c0 7 14 12 32 12s32-5 32-12"/></svg></div>
-<div class="dec tr fi" style="--x:80px;--y:0;--d:.15s"><svg viewBox="0 0 100 100" fill="none" stroke="#B600A8" stroke-width="3"><circle cx="50" cy="50" r="34"/><path d="M50 50V16M50 50l24 24"/></svg></div>
-<div class="dec br fi" style="--x:80px;--y:0;--d:.3s"><svg viewBox="0 0 100 100" fill="none" stroke="#BE4C00" stroke-width="3"><rect x="14" y="14" width="72" height="72"/><path d="M14 38h72M14 62h72M38 14v72M62 14v72"/></svg></div>
-<h2 class="h2 hh fi">About me</h2>
-<p id="ap">I am a fresher Data Analyst skilled in Excel, Power BI, MySQL and Python. I clean messy data, find the story inside it and present it as dashboards people can act on. Let's turn your data into decisions!</p>
-<a class="cbtn" href="#contact">Contact Me</a>
-</section>
-
-<section class="svc" id="services"><h2 class="h2 fi">Services</h2><div class="list" id="sl"></div></section>
-
-<section class="pj" id="projects"><h2 class="h2 hh fi">Projects</h2><div class="stack" id="stack"></div></section>
-
-<footer id="contact"><p style="margin-bottom:20px;font-size:1.2rem">Have a data project? Let's talk.</p>
-<a class="cbtn" href="mailto:bhupendrasinghdeora24@gmail.com">bhupendrasinghdeora24@gmail.com</a>
-<p style="margin-top:28px"><a href="https://www.linkedin.com/in/bhupendra-singh-deora">LinkedIn</a><a href="https://github.com/bhupendra272003">GitHub</a></p></footer>
-</main>
-<script>
-const $=s=>document.querySelector(s),clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
-// fade-in
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'50px'});
-const fi=()=>document.querySelectorAll('.fi:not(.in)').forEach(e=>io.observe(e));
-// marquee
-const tools=[['Excel','#0f5132'],['Power BI','#8a6d00'],['MySQL','#0b4f7a'],['Python','#3b5b00'],['DAX','#5a1a7a'],['PivotTables','#7a2a00'],['Data Cleaning','#0b6e6e'],['SQL Window Functions','#7a0a4a'],['KPI Dashboards','#233b7a'],['Slicers','#4a4a00'],['Pandas','#2a2a7a']];
-const tools2=[['INDEX-MATCH','#0b6e6e'],['SUMIFS','#7a2a00'],['COUNTIFS','#5a1a7a'],['Drill-through','#233b7a'],['ETL','#0f5132'],['Validation Queries','#8a6d00'],['Joins','#0b4f7a'],['Data Modelling','#7a0a4a'],['Reporting','#3b5b00'],['MIS','#2a2a7a']];
-const mk=(a,r)=>{const h=[...a,...a,...a].map(([t,c])=>`<div class="tile" style="background:linear-gradient(135deg,${c},#0C0C0C)">${t}</div>`).join('');r.innerHTML=h};
-mk(tools,$('#r1'));mk(tools2,$('#r2'));
-// about text
-const ap=$('#ap'),txt=ap.textContent;ap.innerHTML=txt.split(' ').map(w=>`<span class="w">${[...w].map(c=>`<span class="ch" style="opacity:.2">${c}</span>`).join('')}</span>`).join(' ');
-const chs=[...ap.querySelectorAll('.ch')];
-// services
-const svc=[['Excel Dashboards','Interactive dashboards with PivotTables, slicers and KPI cards that make monthly reporting quick and clear.'],['Power BI Reports','Data models, DAX measures and multi-page reports with drill-through for deeper analysis.'],['SQL Analysis','MySQL queries, joins and window functions to answer business questions straight from the database.'],['Data Cleaning','Fixing missing values, duplicates and wrong formats in Excel, SQL or Python so the numbers can be trusted.'],['Python Automation','Pandas scripts and loaders that clean and move data automatically, so reports refresh without manual work.']];
-$('#sl').innerHTML=svc.map(([n,d],i)=>`<div class="it fi" style="--d:${i*.1}s"><div class="num">0${i+1}</div><div><h3>${n}</h3><p>${d}</p></div></div>`).join('');
-// projects
-const P=[['BFSI Customer & Loan Analytics','Excel | Customer & loan insights','excel',['Excel','PivotTables','Slicers','INDEX-MATCH','SUMIFS','COUNTIFS'],'https://github.com/bhupendra272003?tab=repositories'],
-['Bank Analytics Dashboard','MySQL | Python | Power BI','bank',['MySQL','Python','Power BI','7 pages','Drill-through'],'https://github.com/bhupendra272003?tab=repositories'],
-['Logistics & Supply Chain Performance','MySQL | Python | Power BI','logistics',['MySQL','Python','Power BI','Data cleaning'],'https://github.com/bhupendra272003/Logistics-Supply-Chain-Analytics'],
-['Inside Airbnb San Diego','MySQL | Python | Power BI','airbnb',['MySQL','Window functions','Python','Power BI'],'https://github.com/bhupendra272003?tab=repositories'],
-['Sales Dashboard','Python | Power BI | DAX','sales',['Python ETL','DAX','Python visuals','4 pages'],'https://github.com/bhupendra272003?tab=repositories']];
-const ph=(k,n,c)=>`<div class="ph ${c}">Dashboard preview<img src="images/${k}-${n}.jpg" alt="" loading="lazy" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.src.replace('.jpg','.png')}else this.remove()"></div>`;
-$('#stack').innerHTML=P.map(([n,cat,k,ch,u],i)=>`<div class="wrap"><article class="card" style="top:calc(112px + ${i*28}px)"><div class="top"><div class="l"><div class="num">0${i+1}</div><div><div class="cat">${cat}</div><div class="nm">${n}</div></div></div><a class="lbtn" href="${u}">View on GitHub</a></div><div class="chips">${ch.map(c=>`<span>${c}</span>`).join('')}</div><div class="imgs"><div class="c1">${ph(k,1,'a')}${ph(k,2,'b')}</div><div style="width:60%">${ph(k,3,'c')}</div></div></article></div>`).join('');
-const cards=[...document.querySelectorAll('.card')];
-// scroll effects
-const r1=$('#r1'),r2=$('#r2'),mq=$('#mq'),st=$('#stack');
-function onScroll(){
- const vh=innerHeight,top=mq.getBoundingClientRect().top+scrollY,off=(scrollY-top+vh)*.3;
- r1.style.transform=`translateX(${off-200}px)`;r2.style.transform=`translateX(${-(off-200)}px)`;
- const rc=ap.getBoundingClientRect(),p=clamp((.8*vh-rc.top)/(.6*vh+rc.height)),N=chs.length;
- chs.forEach((c,i)=>{c.style.opacity=.2+.8*clamp(p*N-i)});
- const sr=st.getBoundingClientRect(),sp=clamp(-sr.top/(sr.height-vh)),n=cards.length;
- cards.forEach((c,i)=>{const t=1-(n-1-i)*.03,s=1-(1-t)*clamp((sp-i/n)/(1-i/n));c.style.transform=`scale(${s})`});
-}
-addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();fi();
-// magnet
-const m=$('#mag'),pad=150,str=3;
-addEventListener('mousemove',e=>{const r=m.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,dx=Math.abs(cx-e.clientX),dy=Math.abs(cy-e.clientY);
- if(dx<r.width/2+pad&&dy<r.height/2+pad){m.style.transition='transform .3s ease-out';m.style.transform=`translate3d(${(e.clientX-cx)/str}px,${(e.clientY-cy)/str}px,0)`}
- else{m.style.transition='transform .6s ease-in-out';m.style.transform='translate3d(0,0,0)'}});
-m.style.willChange='transform';
-</script></body></html>
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}body{background:#101010;color:#f5f1ed;font-family:'DM Sans',sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none} :root{--coral:#f47b61;--blue:#1265b8;--line:#333;--muted:#b9b2ad}
+.shell{max-width:1440px;margin:auto;padding:0 clamp(20px,5vw,76px)}header{height:90px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff22;position:relative;z-index:3} .brand{font-size:1.1rem;font-weight:700;display:flex;gap:12px;align-items:center}.brand-mark{background:var(--coral);width:30px;height:25px;border-radius:40% 55% 55% 40%;display:inline-block;position:relative}.brand-mark:after{content:'▶';color:#101010;position:absolute;right:-7px;top:3px;font-size:17px}.nav{display:flex;gap:clamp(18px,4vw,55px);font-size:.9rem}.nav a:hover{color:var(--coral)}
+.hero{min-height:690px;padding:50px 0 35px;display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;position:relative}.hero:before{content:'';position:absolute;right:-8%;top:-10%;width:58%;height:100%;background:radial-gradient(ellipse,#ba300e80,#16265e70 48%,transparent 72%);pointer-events:none}.intro{position:relative;z-index:1}.eyebrow{letter-spacing:.17em;color:var(--coral);font-size:.76rem;font-weight:700}.intro h1{font-size:clamp(4rem,8.2vw,8.5rem);line-height:.94;letter-spacing:-.06em;margin:22px 0}.intro h1 span{display:block}.role{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.7rem,3vw,3.4rem);color:var(--coral);margin:15px 0 25px}.desc{max-width:500px;color:#c5c0bd;line-height:1.75;font-size:1.04rem}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}.btn{padding:14px 24px;border:1px solid var(--coral);border-radius:40px;color:var(--coral);font-weight:600}.btn.primary{background:var(--coral);color:#111}.btn:hover{filter:brightness(1.12);transform:translateY(-2px)}
+.visual{height:570px;position:relative;display:flex;align-items:center;justify-content:center;z-index:1}.portrait-frame{height:min(480px,75vw);width:min(390px,85%);border-radius:48% 48% 12px 12px;border:1px solid #ffffff3b;background:linear-gradient(155deg,#b6b6b6,#363636 58%,#171717);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;box-shadow:0 30px 80px #0008}.portrait-frame:before{content:'';position:absolute;inset:12px;border:1px solid #ffffff44;border-radius:inherit}.monogram{font-family:'Playfair Display',serif;font-size:clamp(6rem,15vw,12rem);font-weight:700;color:#171717;text-shadow:0 1px #ffffff70;letter-spacing:-.08em}.portrait-label{position:absolute;bottom:22px;left:25px;right:25px;color:#171717;font-size:.8rem;font-weight:700;letter-spacing:.15em;text-align:center}.sunburst{position:absolute;right:3%;top:4%;width:140px;height:140px;opacity:.65}
+.ribbon{margin:35px 0 70px;border:1px solid var(--coral);border-radius:60px;padding:14px 24px;text-align:center;color:var(--coral);font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2vw,1.5rem);letter-spacing:.04em}
+.section{padding:95px 0;border-top:1px solid #292929}.section-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,6.5rem);font-weight:600;letter-spacing:-.05em;margin-bottom:40px}.section-title em{color:var(--coral)}.about-copy{font-size:clamp(1.1rem,2vw,1.5rem);line-height:1.8;max-width:950px;color:#ccc}
+.skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.skills span{border:1px solid #3b526a;background:#142238;padding:10px 18px;border-radius:30px;font-size:.88rem}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}.project{border:1px solid #353535;border-radius:24px;padding:24px;background:linear-gradient(150deg,#181818,#111);transition:.3s}.project:hover{transform:translateY(-5px);border-color:#f47b6170}.project h3{font-size:1.35rem;margin:18px 0 8px}.project p{color:#b9b2ad;line-height:1.65}.project-top{display:flex;justify-content:space-between;align-items:center;color:var(--coral);font-size:.75rem;letter-spacing:.1em}.mini-dash{height:220px;background:#0b1421;border-radius:15px;border:1px solid #2a3c54;padding:18px;display:flex;gap:12px;overflow:hidden}.kpi{height:45px;flex:1;border-radius:7px;background:linear-gradient(120deg,#1d3854,#234f7c);border:1px solid #40617d}.dash-left{flex:1;display:flex;flex-direction:column;gap:10px}.chart{flex:2;border-radius:7px;border:1px solid #324b65;background:linear-gradient(180deg,#142b43,#101a29);position:relative;overflow:hidden}.chart:before{content:'';position:absolute;inset:15% 8%;background:repeating-linear-gradient(90deg,transparent 0 12%,#5da4e6 12% 16%,transparent 16% 22%);opacity:.55;clip-path:polygon(0 85%,15% 65%,30% 75%,45% 35%,60% 48%,75% 20%,90% 45%,100% 12%,100% 100%,0 100%)}.chart.line:before{background:linear-gradient(150deg,transparent 30%,#ff8264 31% 32%,transparent 33%),linear-gradient(45deg,transparent 47%,#4b9add 48% 49%,transparent 50%);clip-path:none}.visual-note{font-size:.7rem;color:#91a7c2;margin-top:8px}
+.contact{background:linear-gradient(120deg,#131c2a,#181111);border-radius:25px;padding:50px}.contact p{color:#c5c0bd;margin-bottom:25px}footer{padding:35px 0;color:#aaa;border-top:1px solid #292929;display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px}
+@media(max-width:850px){.hero{grid-template-columns:1fr;text-align:center;padding-top:40px}.desc{margin:auto}.actions{justify-content:center}.visual{height:470px}.portrait-frame{height:420px}.projects{grid-template-columns:1fr}.sunburst{right:10%}.ribbon{margin-bottom:40px}}
+@media(max-width:540px){header{height:70px}.nav{gap:12px;font-size:.78rem}.brand{font-size:.9rem}.hero{min-height:0}.intro h1{font-size:clamp(3.5rem,16vw,5rem)}.visual{height:400px}.portrait-frame{height:360px}.section{padding:65px 0}.project{padding:15px}.mini-dash{height:175px}.contact{padding:30px 20px}.ribbon{font-size:.95rem}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style></head><body>
+<header class="shell"><a class="brand" href="#top"><span class="brand-mark"></span> <span>Bhupendra <i>Deora</i></span></a><nav class="nav"><a href="#projects">Portfolio</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
+<main class="shell" id="top"><section class="hero"><div class="intro"><div class="eyebrow">DATA • ANALYSIS • BUSINESS INSIGHTS</div><h1><span>Hi, I'm</span><span>Bhupendra</span></h1><div class="role">Data Analyst</div><p class="desc">I turn messy data into meaningful insights, clear dashboards and better business decisions — using Excel, SQL, Python and Power BI.</p><div class="actions"><a class="btn primary" href="#projects">Explore My Work ↗</a><a class="btn" href="#contact">Contact Me</a></div></div><div class="visual"><svg class="sunburst" viewBox="0 0 100 100" fill="none" stroke="#f47b61"><path d="M50 0V100M0 50H100M15 15L85 85M85 15L15 85M50 10L63 38L90 50L63 62L50 90L37 62L10 50L37 38Z"/></svg><div class="portrait-frame"><div class="monogram">BD</div><div class="portrait-label">DATA • PATTERNS • PROGRESS</div></div></div></section>
+<div class="ribbon">Turning information into impact — one insight at a time</div>
+<section class="section" id="about"><h2 class="section-title">A little <em>about me.</em></h2><p class="about-copy">I'm an aspiring Data Analyst who enjoys exploring data, finding patterns and communicating results in a practical way. My work spans data cleaning, SQL analysis, Python workflows and interactive Power BI dashboards. I'm looking for opportunities to contribute, learn and grow with a data-driven team.</p><div class="skills"><span>Excel</span><span>MySQL</span><span>Python · Pandas</span><span>Power BI</span><span>DAX</span><span>Data Cleaning</span><span>Reporting</span></div></section>
+<section class="section" id="projects"><h2 class="section-title">Selected <em>work.</em></h2><div class="projects">
+<article class="project"><div class="project-top"><span>01 / EXCEL</span><span>ANALYSIS</span></div><div class="mini-dash"><div class="dash-left"><div style="display:flex;gap:8px"><div class="kpi"></div><div class="kpi"></div></div><div class="chart"></div></div><div class="chart line"></div></div><div class="visual-note">Illustrative dashboard motif — not a report screenshot.</div><h3>BFSI Customer & Loan Analytics</h3><p>Customer and loan-focused Excel analysis with PivotTables, lookup formulas, conditional logic and interactive filtering.</p><div class="skills"><span>Excel</span><span>PivotTables</span><span>SUMIFS</span><span>COUNTIFS</span></div><br><a class="btn" href="https://github.com/bhupendra272003?tab=repositories">View project ↗</a></article>
+<article class="project"><div class="project-top"><span>02 / MYSQL · PYTHON · BI</span><span>BANKING</span></div><div class="mini-dash"><div class="dash-left"><div style="display:flex;gap:8px"><div class="kpi"></div><div class="kpi"></div><div class="kpi"></div></div><div class="chart line"></div></div><div class="chart"></div></div><div class="visual-note">Illustrative dashboard motif — not a report screenshot.</div><h3>Bank Analytics</h3><p>Explore banking transactions and account data with SQL, Python preparation and a Power BI reporting layer.</p><div class="skills"><span>MySQL</span><span>Python</span><span>Power BI</span></div><br><a class="btn" href="https://github.com/bhupendra272003?tab=repositories">View project ↗</a></article>
+<article class="project"><div class="project-top"><span>03 / OPERATIONS</span><span>SUPPLY CHAIN</span></div><div class="mini-dash"><div class="dash-left"><div style="display:flex;gap:8px"><div class="kpi"></div><div class="kpi"></div></div><div class="chart"></div></div><div class="chart line"></div></div><div class="visual-note">Illustrative dashboard motif — not a report screenshot.</div><h3>Logistics & Supply Chain</h3><p>Operational performance analysis across delivery and logistics indicators using SQL, Python and Power BI.</p><div class="skills"><span>SQL</span><span>Python</span><span>Power BI</span></div><br><a class="btn" href="https://github.com/bhupendra272003/Logistics-Supply-Chain-Analytics">View project ↗</a></article>
+<article class="project"><div class="project-top"><span>04 / DATA STORY</span><span>SALES</span></div><div class="mini-dash"><div class="dash-left"><div style="display:flex;gap:8px"><div class="kpi"></div><div class="kpi"></div><div class="kpi"></div></div><div class="chart line"></div></div><div class="chart"></div></div><div class="visual-note">Illustrative dashboard motif — not a report screenshot.</div><h3>Sales Performance</h3><p>Sales reporting and trend exploration supported by Python preparation and Power BI visual analysis.</p><div class="skills"><span>Python ETL</span><span>DAX</span><span>Power BI</span></div><br><a class="btn" href="https://github.com/bhupendra272003?tab=repositories">View project ↗</a></article>
+</div></section>
+<section class="section" id="contact"><div class="contact"><h2 class="section-title">Let's connect.</h2><p>Open to entry-level Data Analyst opportunities and collaborative projects.</p><a class="btn primary" href="mailto:bhupendrasinghdeora24@gmail.com">bhupendrasinghdeora24@gmail.com ↗</a><div class="skills"><a class="btn" href="https://www.linkedin.com/in/bhupendra-singh-deora">LinkedIn ↗</a><a class="btn" href="https://github.com/bhupendra272003">GitHub ↗</a></div></div></section></main>
+<footer class="shell"><span>© 2026 Bhupendra Singh Deora</span><span>Built with focus, curiosity & data.</span></footer></body></html>
