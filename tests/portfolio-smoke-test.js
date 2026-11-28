@@ -5,4 +5,12 @@ assert(html.includes("document.documentElement.classList.add('reveal-motion')"),
 assert(html.includes("if(!canvas||!window.THREE)"),'Missing no-Three fallback');
 assert(html.includes('catch(err){canvas.style.display=\'none\''),'Missing WebGL creation fallback');
 assert(html.includes('prefers-reduced-motion:reduce'),'Missing reduced-motion support');
+assert(html.includes('IntersectionObserver'),'Missing progressive reveal observer');
+assert(html.includes('id="hud-label"'),'Missing chapter HUD');
+assert(html.includes('Bank Analytics'),'Bank project missing');
+assert(html.includes('Logistics & Supply Chain'),'Logistics project missing');
+assert(html.includes('Sales Performance'),'Sales project missing');
+assert(html.includes('23 & Confused'),'Author/book section missing');
+assert(html.includes('bhupendra272003/Portfolio/main/photo.jpg')||html.includes('photo.jpg'),'Profile photo reference missing');
+assert(html.includes('mailto:bhupendrasinghdeora24@gmail.com'),'Contact email link missing');
 console.log('Portfolio smoke checks passed.');
