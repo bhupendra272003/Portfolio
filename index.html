@@ -1,178 +1,50 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bhupendra Singh Deora | The Mewar Palace Tour</title>
-<meta name="description" content="A cinematic palace tour through the work, milestones and book of Bhupendra Singh Deora, Data Analyst from Udaipur.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bhupendra Singh Deora — Mewar Cinematic Portfolio</title><meta name="description" content="A cinematic 3D journey through analytics projects, skills and work by Bhupendra Singh Deora.">
+<link rel="preconnect" href="https://images.unsplash.com"><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#d9a84e;--ink:#120808;--ivory:#f4e7c9;--saf:#e2802a;--teal:#2b9a9a}
-*{box-sizing:border-box;margin:0;padding:0}
-html{background:var(--ink)}
-body{background:var(--ink);color:var(--ivory);font:400 1.1rem/1.55 'Cormorant Garamond',Georgia,serif;overflow-x:hidden}
-a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-#stage{position:fixed;inset:0;perspective:900px;overflow:hidden;background:radial-gradient(ellipse at 50% 35%,#2a1210 0%,#120808 70%)}
-#world{position:absolute;left:50%;top:40%;transform-style:preserve-3d}
-.room{position:absolute;left:0;top:0;transform-style:preserve-3d}
-.room>*{opacity:var(--fog,1);position:absolute;backface-visibility:visible}
-.floor{background:repeating-conic-gradient(#2c1316 0 25%,#4b2b22 0 50%) 0 0/200px 200px}
-.ceil{background:radial-gradient(circle at 20% 30%,#d9a84e 0 1px,transparent 2px) 0 0/90px 90px,radial-gradient(circle at 70% 70%,#f4e7c9 0 1px,transparent 2px) 0 0/130px 130px,linear-gradient(#08080f,#160a10)}
-.runner{background:linear-gradient(90deg,var(--gold) 0 6px,#6e1420 6px calc(100% - 6px),var(--gold) 0)}
-.wall{background:linear-gradient(180deg,#1a0809,#2f1113 60%,#1a0809);box-shadow:inset 0 0 160px color-mix(in srgb,var(--tint) 35%,transparent)}
-.wall i{position:absolute;top:140px;width:240px;height:380px;border:5px solid var(--gold);border-radius:120px 120px 0 0;background:radial-gradient(ellipse at 50% 80%,color-mix(in srgb,var(--tint) 70%,#fff 5%),#0a0405 75%);box-shadow:0 0 40px color-mix(in srgb,var(--tint) 50%,transparent)}
-.wall b{position:absolute;left:330px;top:30px;width:150px;height:300px;background:linear-gradient(#5a1220,#2a0810);border:3px solid var(--gold);border-top:0;clip-path:polygon(0 0,100% 0,100% 88%,50% 100%,0 88%);display:flex;align-items:center;justify-content:center;font:2.1rem 'Tiro Devanagari Hindi',serif;color:var(--gold);text-align:center;line-height:1.2;padding:10px}
-.shelf{position:absolute;left:0;top:50px;width:100%;height:470px;background:repeating-linear-gradient(0deg,#120807 0 7px,transparent 7px 94px),repeating-linear-gradient(90deg,#6b2a20 0 14px,#d9a84e 14px 17px,#2b5a5a 17px 30px,#8a4a2a 30px 36px,#3a1a3a 36px 52px,#a8442c 52px 60px)}
-.pillar{background:linear-gradient(90deg,#5a3a18,#f1cf86 45%,#5a3a18);border-radius:6px}
-.arch{border:16px solid var(--gold);border-bottom:0;border-radius:330px 330px 0 0;box-shadow:0 0 60px rgba(217,168,78,.35)}
-.glow{border-radius:50%;background:radial-gradient(circle,rgba(255,200,110,.95),rgba(255,140,40,.25) 40%,transparent 70%)}
-.ring{border:6px solid var(--gold);border-radius:50%;animation:spin 9s linear infinite;box-shadow:0 0 50px var(--tint),inset 0 0 50px var(--tint)}
-.glyph{display:flex;align-items:center;justify-content:center;font:900 100px Cinzel,serif;color:var(--gold);text-shadow:0 0 30px var(--tint)}
-@keyframes spin{to{transform:rotateY(360deg)}}
-.flip{transform-style:preserve-3d}.flip .inner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform 1.8s cubic-bezier(.3,.7,.2,1)}
-.flip.on .inner{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;border:8px solid var(--gold);border-radius:150px 150px 10px 10px;overflow:hidden;box-shadow:0 0 60px rgba(217,168,78,.4)}
-.front{background:radial-gradient(circle,#7a1a28,#2a0810);display:flex;align-items:center;justify-content:center;font:900 90px Cinzel,serif;color:var(--gold)}
-.back{transform:rotateY(180deg);background:#1a0a0c}
-.back img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
-.book{background:linear-gradient(135deg,#1c3a4a,#0b1820);border:6px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:900 44px/1.1 Cinzel,serif;color:var(--gold);animation:sway 7s ease-in-out infinite;box-shadow:0 0 70px rgba(217,168,78,.35)}
-.book small{font:600 15px 'Cormorant Garamond',serif;color:var(--ivory);margin-top:14px;letter-spacing:.1em}
-@keyframes sway{50%{transform:translate3d(0,-14px,0) rotateY(20deg)}0%,100%{transform:rotateY(-20deg)}}
-.vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 42%,transparent 40%,rgba(8,3,3,.85) 100%)}
-#dust{position:absolute;inset:0;pointer-events:none}
-#dust s{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:.5;animation:rise linear infinite}
-@keyframes rise{from{transform:translateY(0)}to{transform:translateY(-110vh)}}
-header{position:fixed;top:0;left:0;right:0;z-index:5;padding:18px 24px;font:700 .8rem Cinzel,serif;letter-spacing:.3em;color:var(--gold);pointer-events:none}
-#dots{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:6;display:flex;flex-direction:column;gap:12px}
-#dots button{width:12px;height:12px;border-radius:50%;border:2px solid var(--gold);background:transparent;cursor:pointer;padding:0;transition:.3s;position:relative}
-#dots button:focus-visible{outline:3px solid var(--ivory);outline-offset:4px}
-#dots button::after{content:attr(title);position:absolute;right:22px;top:-7px;white-space:nowrap;background:rgba(18,8,8,.9);border:1px solid rgba(217,168,78,.4);padding:4px 8px;color:var(--ivory);font:12px Cinzel,serif;opacity:0;pointer-events:none}
-#dots button:hover::after,#dots button:focus-visible::after{opacity:1}
-#dots button.on{background:var(--gold);transform:scale(1.35)}
-.panel{position:fixed;z-index:4;left:50%;bottom:3.5vh;width:min(980px,92vw);max-height:40vh;overflow:auto;transform:translateX(-50%);padding:20px 24px;border:1px solid rgba(217,168,78,.55);border-radius:18px;background:rgba(18,8,8,.78);backdrop-filter:blur(8px);opacity:0;pointer-events:none}
-.panel.live{pointer-events:auto}
-.panel.big{bottom:auto;top:15vh;max-height:none;text-align:center;background:none;border:0;backdrop-filter:none}
-.eb{font:700 .78rem Cinzel,serif;letter-spacing:.28em;color:var(--saf);text-transform:uppercase}
-.hi{font:1.25rem 'Tiro Devanagari Hindi',serif;color:var(--gold);margin-left:10px}
-h1{font:900 clamp(2.2rem,8vw,5.6rem)/1 Cinzel,serif;letter-spacing:-.01em;background:linear-gradient(180deg,#f9e3a8,#b9863a);-webkit-background-clip:text;background-clip:text;color:transparent;margin:14px 0}
-h2{font:700 clamp(1.5rem,3.6vw,2.4rem)/1.1 Cinzel,serif;color:var(--ivory);margin:6px 0 8px}
-p.l{max-width:60ch;margin-bottom:10px}.big p.l{margin:0 auto 20px;font-size:1.3rem}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chips span{border:1px solid var(--gold);border-radius:99px;padding:1px 11px;font-size:.85rem;color:var(--gold)}
-.cards{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 8px}
-.card{flex:0 0 min(310px,78vw);scroll-snap-align:start;border:1px solid rgba(217,168,78,.45);border-radius:14px;padding:14px 16px;background:rgba(60,20,24,.45)}
-.card-shot{display:none;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin:0 0 12px;border:1px solid rgba(217,168,78,.35)}
-.card-shot.ready{display:block}
-.card h4{overflow-wrap:anywhere}
-#tour-hint{position:fixed;left:50%;top:14px;transform:translateX(-50%);z-index:5;font:11px Cinzel,serif;letter-spacing:.14em;color:var(--ivory);opacity:.65;pointer-events:none}
-.card h4{font:700 1.05rem/1.2 Cinzel,serif;color:var(--gold);margin-bottom:4px}.card p{font-size:1.02rem;line-height:1.4}.card .n{font:900 1.6rem Cinzel;color:var(--saf)}
-.btn{display:inline-block;margin:4px 8px 0 0;padding:8px 20px;border-radius:99px;border:2px solid var(--gold);color:var(--gold);text-decoration:none;font:700 .8rem Cinzel,serif;letter-spacing:.14em;text-transform:uppercase}
-.btn:hover{background:var(--gold);color:var(--ink)}.btn.f{background:linear-gradient(120deg,#6e1420,#c4531a);border-color:#f1cf86;color:#fff}
-.card a{font:700 .78rem Cinzel;color:var(--saf);letter-spacing:.1em;text-decoration:none}
-#spacer{height:1000vh}
-@media(max-width:640px){.wall b{font-size:1.6rem}.panel{padding:14px 16px;bottom:2vh;max-height:42vh}.panel.big{top:12vh;bottom:auto}.cards{gap:10px}.card{flex-basis:min(285px,82vw)}header{font-size:.68rem;letter-spacing:.18em;padding:14px 16px}}
-@media(prefers-reduced-motion:reduce){.ring,.book,#dust s{animation:none}.flip{transform-style:preserve-3d}.flip .inner{transition:none}}
-
-/* Cinematic refinement */
-:root{--gold:#d8b36b;--ink:#10090b;--ivory:#f4e7d2;--saf:#e28a39;--teal:#4ca1a6}
-body{background:radial-gradient(ellipse at 50% 20%,#3a1b20,#10090b 65%);font-family:'Cormorant Garamond',serif}
-#world{filter:drop-shadow(0 0 2px #d9a84e22)}
-.shade{background:linear-gradient(90deg,#080609ed,#10090b88 48%,#10090b22 90%),linear-gradient(0deg,#080609dd,transparent 60%)}
-.panel{width:min(820px,92vw);padding:clamp(22px,3vw,38px);border:1px solid #d8b36b55;background:linear-gradient(140deg,#170e11ee,#10090bdc 70%);box-shadow:0 30px 100px #0009, inset 0 0 30px #d8b36b0c;backdrop-filter:blur(7px);border-radius:4px}
-.panel h1,.panel h2{font-family:'Cinzel',serif;letter-spacing:.02em;text-shadow:0 2px 25px #0009}
-.panel h1{font-size:clamp(2.5rem,7vw,5.2rem);line-height:1.05}
-.panel h2{font-size:clamp(1.8rem,4vw,3rem)}
-.panel .l{font-size:clamp(1.1rem,2vw,1.45rem);line-height:1.6;color:#e5d6bd}
-.cards{gap:16px}
-.card{border:1px solid #d8b36b45!important;border-radius:4px!important;background:linear-gradient(145deg,#251319dd,#111015ee)!important;box-shadow:0 14px 35px #0005;position:relative;overflow:hidden}
-.card:before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--tint,var(--gold))}
-.card h4{font-family:'Cinzel',serif;color:#e9d29a;font-size:1.18rem}
-.card p{font-size:1.03rem;color:#d9cbb9;line-height:1.6}
-.btn{border-radius:3px;letter-spacing:.05em;font-family:'Cinzel',serif;font-size:.76rem}
-.btn.f{box-shadow:0 0 25px #d8b36b22}
-.panel .hi{font-family:'Tiro Devanagari Hindi',serif;opacity:.7}
-#dots button{border-color:#d8b36b!important;background:#3a2226!important;box-shadow:0 0 0 2px #10090b}
-#dots button.on{background:#d8b36b!important;box-shadow:0 0 12px #d8b36b88}
-.flip .face.back img{object-position:center 20%;filter:saturate(.95)}
-.flip .face.back{border:3px solid #d8b36b;box-shadow:0 0 40px #d8b36b44}
-.project-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
-.project-visual{min-height:130px;border:1px solid #d8b36b55;padding:15px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:radial-gradient(circle at 90% 15%,var(--glow,#2b9a9a66),transparent 50%),linear-gradient(135deg,#111821,#201015);font-family:'Cinzel',serif;color:#f4e7d2;letter-spacing:.08em;font-size:.76rem}
-.project-visual svg{width:100%;height:62px;opacity:.85}
-.project-visual:nth-child(2){background:linear-gradient(135deg,#10262b,#12101a);border-color:#4ca1a655}
-.project-visual:nth-child(3){background:radial-gradient(circle at 20% 20%,#d68a3733,transparent 55%),linear-gradient(135deg,#22120d,#141117)}
-.project-visual:nth-child(4){background:linear-gradient(145deg,#171d33,#121015);border-color:#8a78b955}
-.project-visual:nth-child(5){background:linear-gradient(135deg,#27121a,#14202b);border-color:#c4531a55}
-.portrait-extra{max-width:100%;width:210px;max-height:300px;object-fit:cover;border:1px solid #d8b36b;display:block;margin:15px auto;box-shadow:0 12px 35px #0007}
-@media(max-width:700px){.panel{max-height:78svh;overflow:auto;padding:20px}.cards{grid-template-columns:1fr!important}.panel h1{font-size:clamp(2.4rem,10vw,3.5rem)}.project-gallery{grid-template-columns:1fr 1fr}.card{padding:14px!important}}
-
-</style></head><body>
-<noscript><p style="padding:90px 24px">This portfolio is a scroll-driven 3D tour and needs JavaScript. Contact: bhupendrasinghdeora24@gmail.com | linkedin.com/in/bhupendra-singh-deora | github.com/bhupendra272003</p></noscript>
-<header>BHUPENDRA SINGH DEORA &middot; MEWAR</header><div id="tour-hint" aria-hidden="true">SCROLL · EXPLORE THE ROOMS</div>
-<div id="spacer"></div>
-<div id="stage"><div id="world"></div><div class="vig"></div><div id="dust"></div></div>
-<nav id="dots" aria-label="Palace rooms"></nav><div id="panels"></div>
-<script>
-const SP=1400,GH='https://github.com/bhupendra272003',REPOS=GH+'?tab=repositories';
-const $=(s)=>document.querySelector(s),clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
-const ch=a=>`<div class="chips">${a.map(x=>`<span>${x}</span>`).join('')}</div>`;
-const card=(n,t,d,c,u)=>{const slug={'BFSI Customer &amp; Loan Analytics':'bfsi','Bank Analytics Dashboard':'bank-analytics','Logistics &amp; Supply Chain Performance':'logistics','Inside Airbnb: San Diego':'airbnb','Sales Dashboard':'sales','Retinal Disease Detection':'retinal','Query Panel':'query-panel','The Mewar Palace':'palace'}[t]||'';const shot=slug?`<img class=\"card-shot\" src=\"images/${slug}-1.png\" alt=\"${t} screenshot\" loading=\"lazy\" onload=\"this.classList.add('ready')\" onerror=\"this.remove()\">`:'';return `<article class=\"card\">${shot}<span class=\"n\">${n}</span><h4>${t}</h4><p>${d}</p>${ch(c)}<a href=\"${u}\" target=\"_blank\" rel=\"noopener noreferrer\">Explore &#8599;</a></article>`};
-const R=[
-{id:'Gate',hi:'स्वागतम्',tint:'#c4531a',g:'',big:1,h:`<div class="eb">Udaipur &middot; Mewar &middot; India</div><h1>Bhupendra<br>Singh Deora</h1><p class="l">Data Analyst. Step inside a palace built from data, craft and stories, and let the tour begin.</p><a class="btn f" href="#" data-go="1">Begin the tour &darr;</a>`},
-{id:'Rajcourt',hi:'राजसभा',tint:'#e2802a',h:`<div class="eb">Chapter I &middot; The Rajcourt</div><h2>Where the story begins.</h2><p class="l">I am an aspiring Data Analyst from Udaipur, Mewar. I clean, question and connect data until a business story becomes easier to understand — then build a dashboard that lets others inspect that story for themselves.</p>${ch(['Excel','MySQL','Python (Pandas)','Power BI','DAX','Data Cleaning','Reporting'])}`},
-{id:'Milestones',hi:'उपलब्धि कक्ष',tint:'#d9a84e',h:`<div class="eb">Chapter II &middot; Hall of Milestones</div><h2>Every step, a chapter.</h2><div class="cards">${[['I','Academic Foundation','B.Tech in Computer Science and Engineering: the groundwork for logic, systems and analytical thinking.'],['II','Technical Practice','Hands-on work in Excel, SQL, Python and Power BI, learned on real and messy datasets.'],['III','Industry Exposure','A Virtual Salesforce Developer internship that taught platform thinking beyond the classroom.'],['IV','Independent Creation','Portfolio projects built end to end: raw data, clean model, finished dashboard.'],['V','Author','Published "23 &amp; Confused", a book on navigating the years of becoming.']].map(([n,t,d])=>`<article class="card"><span class="n">${n}</span><h4>${t}</h4><p>${d}</p></article>`).join('')}</div>`},
-{id:'Data',hi:'डेटा कक्ष',tint:'#2b9a9a',g:'&Sigma;',h:`<div class="eb">Chapter III &middot; Chamber of Data</div><h2>Numbers, made to speak.</h2><div class="cards"><div class="project-gallery" aria-label="Project visual motifs (not dashboard screenshots)"><div class="project-visual" style="--glow:#e2b05b66">BFSI · EXCEL<svg viewBox="0 0 200 60"><g fill="none" stroke="#e2b05b" stroke-width="3"><path d="M10 48V28h28v20M52 48V15h28v33M94 48V7h28v41M136 48V23h28v25"/><path d="M10 54H188" stroke-width="1"/></g></svg></div><div class="project-visual" style="--glow:#4ca1a666">BANK · SQL<svg viewBox="0 0 200 60"><g fill="none" stroke="#4ca1a6" stroke-width="2"><ellipse cx="35" cy="13" rx="22" ry="9"/><path d="M13 13v28c0 11 44 11 44 0V13M13 26c0 11 44 11 44 0M75 45L98 25l23 10 28-27 23 22"/></g></svg></div><div class="project-visual" style="--glow:#d68a3766">LOGISTICS · FLOW<svg viewBox="0 0 200 60"><g fill="none" stroke="#d68a37" stroke-width="2"><path d="M10 40H50V20h35v20h30V15h35v25h15"/><circle cx="50" cy="20" r="5"/><circle cx="115" cy="15" r="5"/><circle cx="165" cy="40" r="5"/><path d="M10 50H180" stroke-dasharray="5 5"/></g></svg></div><div class="project-visual" style="--glow:#8a78b966">AIRBNB · SQL<svg viewBox="0 0 200 60"><g fill="none" stroke="#9b92d4" stroke-width="2"><path d="M20 48L45 15l25 33 25-24 25 24 25-35 25 35"/><circle cx="45" cy="15" r="4"/><circle cx="115" cy="24" r="4"/><circle cx="165" cy="13" r="4"/></g></svg></div><div class="project-visual" style="--glow:#c4531a66">SALES · DAX<svg viewBox="0 0 200 60"><g fill="none" stroke="#c4531a" stroke-width="3"><rect x="15" y="30" width="25" height="20"/><rect x="55" y="20" width="25" height="30"/><rect x="95" y="8" width="25" height="42"/><rect x="135" y="18" width="25" height="32"/></g></svg></div></div>${[
-card('01','BFSI Customer &amp; Loan Analytics','Over 6,000 customer and loan records cleaned and validated, then shaped into an Excel KPI dashboard with PivotTables and slicers across customers, loans, branches, states and insurance.',['Excel','PivotTables','SUMIFS','INDEX-MATCH'],GH+'/Banking-Analytics'),
-card('02','Bank Analytics Dashboard','A Czech bank\'s accounts, clients, cards, loans and transactions loaded into MySQL by a Python script, then explored in a seven-page Power BI report with drill-through. The report uses drill-through pages, and SQL validation queries are used to cross-check selected measures.',['MySQL','Python','Power BI','DAX'],GH+'/Banking-Analytics'),
-card('03','Logistics &amp; Supply Chain Performance','Orders, shipments, carriers and locations cleaned in Python, structured in MySQL and presented in a Power BI dashboard that shows how reliably deliveries move.',['MySQL','Python','Power BI'],GH+'/Logistics-Supply-Chain-Analytics'),
-card('04','Inside Airbnb: San Diego','Listings, reviews and calendar data loaded into MySQL, with price outliers and suspicious listings flagged through a SQL view, ready for dashboard storytelling.',['MySQL','Window functions','Python','Power BI'],GH+'/Inside-Airbnb-San-Diego'),
-card('05','Sales Dashboard','A four-page Power BI report with overview, product and customer analysis, Python visuals and product drill-through, fed by Python ETL and DAX measures.',['Python','DAX','Power BI'],GH+'/Sales-Performance-Analytics')].join('')}</div>`},
-{id:'AI',hi:'बुद्धि कक्ष',tint:'#8a4cc4',g:'&psi;',h:`<div class="eb">Chapter IV &middot; Chamber of Intelligence</div><h2>Teaching machines to see.</h2><div class="cards">${card('01','Retinal Disease Detection','An image-based AI/ML project exploring retinal disease detection. [EDIT: document the model architecture, dataset, preprocessing, validation and actual results here before publishing.]',['AI / ML','Image classification'],REPOS)}<article class="card"><span class="n">&infin;</span><h4>More experiments brewing</h4><p>This chamber grows as my machine-learning journey does.</p></article></div>`},
-{id:'Web',hi:'शिल्प कक्ष',tint:'#c4531a',g:'&lt;/&gt;',h:`<div class="eb">Chapter V &middot; Chamber of Craft</div><h2>Software, built to be used.</h2><div class="cards">${card('01','Query Panel','A WhatsApp-style support inbox built on Node.js, Express, SQLite and Socket.IO: real-time conversations with file uploads, so a team can resolve every query in one place.',['Node.js','Express','SQLite','Socket.IO'],REPOS)+card('02','The Mewar Palace','This very portfolio: a scroll-driven 3D palace tour crafted with plain HTML, CSS and JavaScript.',['HTML','CSS','JavaScript'],GH+'/Portfolio')}</div>`},
-{id:'Library',hi:'ग्रंथालय',tint:'#d9a84e',g:'',h:`<div class="eb">Chapter VI &middot; The Royal Library</div><h2>Some journeys are written.</h2><p class="l"><b>23 &amp; Confused: A Survival Guide for the Years Nobody Prepared Us For.</b> Honest reflections on uncertainty, growing up and finding direction in your twenties, written for everyone who left college and wondered what comes next.</p><p class="l"><i>Next on the shelf: The Data Behind Life, an exploration of data and everyday decisions.</i></p><a class="btn f" href="https://www.amazon.com/dp/B0HMNQSHG1">Read the book &#8599;</a>`},
-{id:'Horizon',hi:'क्षितिज',tint:'#2b4a9a',g:'',big:1,h:`<div class="eb">Chapter VII &middot; Under the Mewar Sky</div><h2 style="font-size:clamp(1.8rem,5vw,3.4rem)">A new chapter, beyond the horizon.</h2><p class="l">Open to entry-level Data Analyst roles and collaborations. From the old city of lakes to the next chapter of my career, I would love to hear from you.</p><a class="btn f" href="mailto:bhupendrasinghdeora24@gmail.com">Email</a><a class="btn" href="https://www.linkedin.com/in/bhupendra-singh-deora">LinkedIn</a><a class="btn" href="${GH}">GitHub</a><a class="btn" href="https://portfoliobcr.vercel.app/cv.html">CV</a>`}];
-const N=R.length,world=$('#world');
-const add=(p,c,s,h='')=>{const d=document.createElement('div');d.className=c;d.style.cssText=s;d.innerHTML=h;p.appendChild(d);return d};
-const rooms=R.map((r,k)=>{
- const z0=-k*SP+200,room=add(world,'room','');room.style.setProperty('--tint',r.tint);
- add(room,'floor',`left:-500px;top:0;width:1000px;height:${SP}px;transform-origin:0 0;transform:translate3d(0,260px,${z0}px) rotateX(-90deg)`);
- add(room,'runner',`left:-90px;top:0;width:180px;height:${SP}px;transform-origin:0 0;transform:translate3d(0,259px,${z0}px) rotateX(-90deg)`);
- add(room,'ceil',`left:-500px;top:0;width:1000px;height:${SP}px;transform-origin:0 0;transform:translate3d(0,-340px,${z0}px) rotateX(-90deg)`);
- const inner=k==6?'<div class="shelf"></div>':[90,520,950].map(x=>`<i style="left:${x}px"></i>`).join('')+(k&&k<7?`<b>${r.hi}</b>`:'');
- add(room,'wall',`left:0;top:0;width:${SP}px;height:600px;transform-origin:0 0;transform:translate3d(-500px,-340px,${z0}px) rotateY(90deg)`,inner);
- add(room,'wall',`left:0;top:0;width:${SP}px;height:600px;transform-origin:${SP}px 0;transform:translate3d(${500-SP}px,-340px,${z0}px) rotateY(-90deg)`,inner);
- [.2,.5,.8].forEach(f=>[-410,410].forEach(x=>add(room,'pillar',`left:-35px;top:0;width:70px;height:600px;transform:translate3d(${x}px,-340px,${z0-SP*f}px)`)));
- [.3,.7].forEach(f=>add(room,'glow',`left:-45px;top:-300px;width:90px;height:90px;transform:translate3d(0,0,${z0-SP*f}px)`));
- if(k<N-1)add(room,'arch',`left:-330px;top:-300px;width:660px;height:560px;transform:translate3d(0,0,${z0-SP+30}px)`);
- if(k==1){add(room,'arch',`left:-260px;top:-300px;width:520px;height:560px;background:radial-gradient(ellipse at 50% 70%,#e2802a55,#0a0405 70%);transform:translate3d(0,0,${z0-700}px)`);
-  const f=add(room,'flip',`left:-150px;top:-140px;width:300px;height:400px;transform:translate3d(0,0,${z0-460}px)`,`<div class="inner"><div class="face front">BD</div><div class="face back"><img src="photo.jpg" alt="Bhupendra Singh Deora" onerror="this.remove()"></div></div>`);room.flip=f}
- if(k==2)[-300,-150,0,150,300].forEach((x,i)=>add(room,'glow',`left:-30px;top:-20px;width:60px;height:60px;transform:translate3d(${x}px,${i%2*30}px,${z0-420-i*40}px)`));
- if(r.g)add(room,'pos',`left:-130px;top:-170px;width:260px;height:260px;transform:translate3d(0,0,${z0-480}px)`,`<div class="ring" style="position:absolute;inset:0"></div><div class="glyph" style="position:absolute;inset:0">${r.g}</div>`);
- if(k==6)add(room,'pos',`left:-130px;top:-120px;width:260px;height:360px;transform:translate3d(0,0,${z0-460}px)`,'<div class="book" style="position:absolute;inset:0">23 &amp;<br>CONFUSED<small>A SURVIVAL GUIDE</small></div>');
- if(k==7)add(room,'glow',`left:-170px;top:-330px;width:340px;height:340px;background:radial-gradient(circle,#fff6d8,#e8d9a8 35%,rgba(232,217,168,.15) 62%,transparent 70%);transform:translate3d(0,0,${z0-SP+60}px)`);
- return room});
-// panels and dots
-const pw=$('#panels'),dots=$('#dots');
-const panels=R.map((r,k)=>{const p=document.createElement('section');p.className='panel'+(r.big?' big':'');p.setAttribute('aria-label',r.id);p.innerHTML=r.h.replace('</div>',`<span class="hi">${r.hi}</span></div>`);pw.appendChild(p);
- const b=document.createElement('button');b.setAttribute('aria-label',r.id+' - '+r.hi);b.title=r.id;b.onclick=()=>go(k);dots.appendChild(b);return p});
-const maxS=()=>document.documentElement.scrollHeight-innerHeight;
-function go(k){scrollTo({top:k/(N-1)*maxS(),behavior:'smooth'})}
-document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();go(+a.dataset.go)}});
-document.addEventListener('keydown',e=>{if(['ArrowDown','PageDown'].includes(e.key)){if(document.activeElement===document.body){e.preventDefault();go(Math.min(N-1,Math.round(cur)+1))}}else if(['ArrowUp','PageUp'].includes(e.key)&&document.activeElement===document.body){e.preventDefault();go(Math.max(0,Math.round(cur)-1))}else if(e.key==='Home'&&document.activeElement===document.body){e.preventDefault();go(0)}else if(e.key==='End'&&document.activeElement===document.body){e.preventDefault();go(N-1)}});
-// dust
-const dust=$('#dust');for(let i=0;i<26;i++){const s=document.createElement('s');s.style.cssText=`left:${Math.random()*100}%;top:${60+Math.random()*50}%;animation-duration:${14+Math.random()*20}s;animation-delay:-${Math.random()*20}s;transform:scale(${.6+Math.random()*1.4})`;dust.appendChild(s)}
-// camera
-const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-let cur=0,t0=performance.now();
-const sm=x=>x*x*(3-2*x);
-function frame(now){
- const target=maxS()>0?clamp(scrollY/maxS())*(N-1):0;
- cur=rm?target:cur+(target-cur)*.055;
- const i=Math.min(N-1,Math.floor(cur)),f=cur-i,pos=i+(i<N-1?sm(clamp((f-.28)/.72)):0),t=(now-t0)/1000;
- const yaw=rm?0:Math.sin(pos*1.7)*2.2+Math.sin(t*.5)*.5,pitch=rm?0:Math.sin(t*.4)*.35,bob=rm?0:Math.sin(t*1.1)*3;
- world.style.transform=`rotateX(${pitch}deg) rotateY(${yaw}deg) translate3d(0,${bob}px,${pos*SP}px)`;
- const cz=-pos*SP;
- rooms.forEach((r,k)=>{const d=Math.abs(-(k+.5)*SP+200-cz);r.style.setProperty('--fog',clamp(1-(d-.9*SP)/(1.4*SP)).toFixed(3));r.style.display=d>3.2*SP?'none':''});
- panels.forEach((p,k)=>{const o=clamp(1-Math.abs(pos-k)*2.4);p.style.opacity=o.toFixed(3);p.style.transform=`translateX(-50%) translateY(${(1-o)*24}px)`;p.classList.toggle('live',o>.5)});
- [...dots.children].forEach((b,k)=>b.classList.toggle('on',Math.round(pos)===k));
- rooms[1].flip.classList.toggle('on',Math.abs(pos-1)<.35);
- requestAnimationFrame(frame)}
-requestAnimationFrame(frame);
+*{box-sizing:border-box}html{background:#09090c;scroll-behavior:smooth}body{margin:0;color:#f2eadb;font-family:'DM Sans',sans-serif;background:#09090c;overflow-x:hidden}#scene{position:fixed;inset:0;z-index:0}canvas{display:block}#grain{position:fixed;inset:0;pointer-events:none;z-index:2;background:radial-gradient(ellipse at center,transparent 40%,#030306cc 100%)}#grain:after{content:"";position:absolute;inset:0;opacity:.12;background-image:url("https://www.transparenttextures.com/patterns/noise.png")}header{position:fixed;z-index:5;top:22px;left:5vw;right:5vw;display:flex;justify-content:space-between;align-items:center;color:#e6c982;font:600 11px Cinzel;letter-spacing:.22em}header a{color:inherit;text-decoration:none}#progress{position:fixed;top:0;left:0;height:2px;background:#dfb66b;z-index:10;width:0}#nav{position:fixed;right:3vw;top:50%;transform:translateY(-50%);z-index:6;display:grid;gap:12px}#nav button{width:9px;height:9px;border:1px solid #e3c276;background:transparent;border-radius:50%;cursor:pointer}#nav button.active{background:#e3c276;box-shadow:0 0 14px #e3c276}main{position:relative;z-index:3}.chapter{min-height:100vh;display:flex;align-items:center;padding:10vh 9vw;pointer-events:none}.content{width:min(700px,100%);opacity:0;transform:translateY(25px);transition:opacity .8s,transform .8s}.chapter.active .content{opacity:1;transform:none}.chapter:nth-child(even){justify-content:flex-end}.chapter:nth-child(even) .content{text-align:right}.eyebrow{color:#d7b66f;font:600 12px Cinzel;letter-spacing:.22em;text-transform:uppercase}h1,h2{font-family:Cinzel,serif;font-weight:600;line-height:1.08;margin:16px 0}h1{font-size:clamp(42px,8vw,104px);color:#f0d59c}h2{font-size:clamp(34px,5vw,66px)}p{font-size:clamp(16px,1.7vw,21px);line-height:1.7;color:#d3c9bd;max-width:60ch}.chapter:nth-child(even) p{margin-left:auto}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.chapter:nth-child(even) .buttons{justify-content:flex-end}.button{pointer-events:auto;border:1px solid #d7b66f;padding:12px 20px;color:#e5c681;text-decoration:none;font:600 11px Cinzel;letter-spacing:.12em;text-transform:uppercase;transition:.25s}.button:hover{background:#d7b66f;color:#09090c}.grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-start;margin-top:28px}.chapter:nth-child(even) .grid{justify-content:flex-end}.tile{pointer-events:auto;width:min(270px,42vw);background:#111116cc;border:1px solid #c8a76155;backdrop-filter:blur(10px);overflow:hidden;text-align:left}.tile img{width:100%;height:150px;object-fit:cover;display:block;filter:saturate(.8)}.tile div{padding:16px}.tile h3{font:600 16px Cinzel;color:#e7ca85;margin:0 0 8px}.tile p{font-size:14px;line-height:1.5;margin:0}.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.skills span{border:1px solid #c8a76166;color:#e3c276;padding:8px 13px;font-size:12px;letter-spacing:.04em}.portrait{width:min(340px,75vw);border:1px solid #d8b66c;padding:7px;background:#161015;margin-top:25px;pointer-events:auto}.portrait img{width:100%;max-height:450px;object-fit:cover;display:block}.foot{color:#a99d8e;font-size:12px}.down{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:5;font:11px Cinzel;letter-spacing:.18em;color:#d6bd84;animation:pulse 2s infinite}@keyframes pulse{50%{opacity:.35}}@media(max-width:700px){.chapter{padding:12vh 7vw;align-items:flex-end}.chapter:nth-child(even){justify-content:flex-start}.chapter:nth-child(even) .content{text-align:left}.chapter:nth-child(even) p{margin-left:0}.chapter:nth-child(even) .buttons{justify-content:flex-start}.tile{width:100%}.grid{max-height:35vh;overflow:auto}.portrait{width:200px}header{letter-spacing:.1em}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.down{animation:none}}
+</style></head><body><div id="progress"></div><div id="scene"></div><div id="grain"></div><header><span>BHUPENDRA SINGH DEORA</span><a href="https://github.com/bhupendra272003">GITHUB ↗</a></header><nav id="nav"></nav><div class="down">SCROLL TO JOURNEY ↓</div>
+<main>
+<section class="chapter" data-z="0"><div class="content"><div class="eyebrow">UDAIPUR · MEWAR · INDIA</div><h1>Bhupendra<br>Singh Deora</h1><p>Data Analyst · A cinematic journey through data, craft and curiosity.</p><div class="buttons"><a class="button" href="#about">Enter the palace ↓</a><a class="button" href="https://portfoliobcr.vercel.app/cv.html">Resume ↗</a></div></div></section>
+<section class="chapter" data-z="-18" id="about"><div class="content"><div class="eyebrow">01 · THE PERSON BEHIND THE DATA</div><h2>Curiosity,<br>made tangible.</h2><p>A Computer Science graduate from Udaipur building practical analytics workflows—cleaning data, exploring questions with SQL and Python, and communicating findings through Power BI.</p><div class="portrait"><img src="photo.jpg" alt="Bhupendra Singh Deora portrait" onerror="this.parentElement.style.display='none'"></div><div class="skills"><span>Excel</span><span>MySQL</span><span>Python · Pandas</span><span>Power BI</span><span>DAX</span><span>Data Cleaning</span><span>Reporting</span></div></div></section>
+<section class="chapter" data-z="-36"><div class="content"><div class="eyebrow">02 · BANKING ANALYTICS</div><h2>Find the signal<br>in the ledger.</h2><p>Explore customer, account, loan and transaction behaviour. The Czech bank dataset becomes a multi-page analytical report with SQL cross-checks and drill-through.</p><div class="grid"><article class="tile"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=85" alt="Banking and finance concept"><div><h3>Czech Bank Analytics</h3><p>MySQL · Python · Power BI · DAX</p></div></article><article class="tile"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=85" alt="Financial analysis"><div><h3>Customer & Loan Analysis</h3><p>Data validation, segmentation and dashboard insights</p></div></article></div><div class="buttons"><a class="button" href="https://github.com/bhupendra272003">Explore GitHub ↗</a></div></div></section>
+<section class="chapter" data-z="-54"><div class="content"><div class="eyebrow">03 · LOGISTICS & SUPPLY CHAIN</div><h2>Trace the journey<br>of every order.</h2><p>Python cleaning, MySQL analysis and Power BI reporting bring delivery performance, shipment patterns and operations into view.</p><div class="grid"><article class="tile"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=85" alt="Warehouse logistics"><div><h3>Supply Chain Performance</h3><p>Python · MySQL · Power BI</p></div></article><article class="tile"><img src="https://images.unsplash.com/photo-1519003722824-194d4455a60?auto=format&fit=crop&w=900&q=85" alt="Delivery transport"><div><h3>Delivery & Transport</h3><p>Operational analysis and reporting</p></div></article></div><div class="buttons"><a class="button" href="https://github.com/bhupendra272003/Logistics-Supply-Chain-Analytics">Project ↗</a></div></div></section>
+<section class="chapter" data-z="-72"><div class="content"><div class="eyebrow">04 · SALES & MARKET</div><h2>Performance in<br>perspective.</h2><p>A four-page Power BI sales report, Python data preparation, DAX measures and drill-through to help explore trends by product and customer.</p><div class="grid"><article class="tile"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85" alt="Data dashboard screen"><div><h3>Sales Analytics</h3><p>Python visuals · DAX · Power BI</p></div></article><article class="tile"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85" alt="Analytics charts"><div><h3>Visual Storytelling</h3><p>Four-page report · drill-through</p></div></article></div><div class="buttons"><a class="button" href="https://github.com/bhupendra272003">View projects ↗</a></div></div></section>
+<section class="chapter" data-z="-90"><div class="content"><div class="eyebrow">05 · OTHER EXPLORATIONS</div><h2>Beyond a single<br>dataset.</h2><div class="grid"><article class="tile"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=85" alt="Airbnb home"><div><h3>Inside Airbnb · San Diego</h3><p>SQL · listings · reviews · calendar</p></div></article><article class="tile"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85" alt="Medical technology"><div><h3>Retinal Image AI</h3><p>Image classification exploration · model details to be documented</p></div></article><article class="tile"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85" alt="Software and computing"><div><h3>Query Panel</h3><p>Node.js · Express · SQLite · Socket.IO</p></div></article></div></div></section>
+<section class="chapter" data-z="-108"><div class="content"><div class="eyebrow">06 · THE LIBRARY</div><h2>23 & Confused</h2><p>A survival guide for the years nobody prepared us for. A book about uncertainty, growing up and finding direction in your twenties.</p><div class="buttons"><a class="button" href="https://www.amazon.com/dp/B0HMNQSHG1">Discover the book ↗</a></div></div></section>
+<section class="chapter" data-z="-126"><div class="content"><div class="eyebrow">THE HORIZON · OPEN TO OPPORTUNITIES</div><h2>Let the next<br>chapter begin.</h2><p>Seeking an entry-level Data Analyst opportunity where curiosity, careful analysis and communication can make a practical difference.</p><div class="buttons"><a class="button" href="mailto:bhupendrasinghdeora24@gmail.com">Email me</a><a class="button" href="https://www.linkedin.com/in/bhupendra-singh-deora">LinkedIn ↗</a><a class="button" href="https://github.com/bhupendra272003">GitHub ↗</a><a class="button" href="https://portfoliobcr.vercel.app/cv.html">Resume ↗</a></div><p class="foot">Built with HTML · CSS · Three.js · Scroll-driven storytelling</p></div></section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script>
+(()=>{
+const host=document.querySelector('#scene');if(!window.THREE){host.innerHTML='<div style="color:#d8b66b;padding:30px">3D scene loading unavailable; content remains accessible.</div>';return}
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x09090c);scene.fog=new THREE.FogExp2(0x09090c,.025);
+const camera=new THREE.PerspectiveCamera(65,innerWidth/innerHeight,.1,150);camera.position.set(0,2.2,5);
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.outputEncoding=THREE.sRGBEncoding;host.appendChild(renderer.domElement);
+scene.add(new THREE.HemisphereLight(0xd7bd86,0x120a16,1.4));const gold=new THREE.PointLight(0xd7a856,2.5,28);gold.position.set(0,4,2);scene.add(gold);
+const warm=new THREE.PointLight(0xff7c36,1.5,24);warm.position.set(-5,2,-30);scene.add(warm);
+const mat=(color,rough=.75)=>new THREE.MeshStandardMaterial({color,roughness:rough});
+const stone=mat(0x47352b), dark=mat(0x20141b), trim=mat(0xc49a54), floor=mat(0x211820), teal=mat(0x27444a);
+const box=(w,h,d,m,x,y,z)=>{const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);scene.add(o);return o};
+// corridor longitudinal layout
+box(22,.25,150,floor,0,-.12,-65);box(22,.25,150,dark,0,7,-65);
+box(.3,7,150,stone,-11,3.5,-65);box(.3,7,150,stone,11,3.5,-65);
+for(let z=4;z>-140;z-=9){for(const x of [-9.8,9.8]){box(1.1,7,1.1,stone,x,3.5,z);box(1.5,.45,1.5,trim,x,6.8,z);box(1.5,.45,1.5,trim,x,.25,z)}}
+// repeating arched portal ribs
+for(let z=0;z>-132;z-=18){const tor=new THREE.Mesh(new THREE.TorusGeometry(8, .24,12,48,Math.PI),trim);tor.rotation.z=Math.PI;tor.position.set(0,6.6,z);scene.add(tor);box(0.45,6.8,.5,trim,-8,3.4,z);box(.45,6.8,.5,trim,8,3.4,z);}
+// framed, luminous project artworks as floating picture planes
+const art=[
+['https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=80',-6,3,-20],
+['https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80',6,3,-40],
+['https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80',-6,3,-60],
+['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80',6,3,-80],
+['https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80',-6,3,-100],
+['https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80',6,3,-120]
+];
+const loader=new THREE.TextureLoader();loader.crossOrigin='anonymous';art.forEach(([url,x,y,z])=>loader.load(url,tex=>{tex.encoding=THREE.sRGBEncoding;const p=new THREE.Mesh(new THREE.PlaneGeometry(4.4,2.7),new THREE.MeshBasicMaterial({map:tex}));p.position.set(x,y,z);p.rotation.y=x<0?.12:-.12;scene.add(p);const frame=new THREE.Mesh(new THREE.BoxGeometry(4.65,2.95,.16),trim);frame.position.set(x,y,z-.09);frame.rotation.y=p.rotation.y;scene.add(frame);scene.remove(frame);scene.add(p);}));
+const scrolls=[...document.querySelectorAll('.chapter')],nav=document.querySelector('#nav');scrolls.forEach((s,i)=>{const b=document.createElement('button');b.title='Chapter '+(i+1);b.onclick=()=>s.scrollIntoView({behavior:'smooth'});nav.appendChild(b)});
+let scrollYNorm=0;function update(){const max=document.documentElement.scrollHeight-innerHeight;scrollYNorm=max>0?scrollY/max:0;const idx=Math.min(scrolls.length-1,Math.round(scrollYNorm*(scrolls.length-1)));scrolls.forEach((s,i)=>s.classList.toggle('active',i===idx));[...nav.children].forEach((b,i)=>b.classList.toggle('active',i===idx));document.querySelector('#progress').style.width=(scrollYNorm*100)+'%'}
+addEventListener('scroll',update);update();
+function animate(){requestAnimationFrame(animate);const n=scrollYNorm*(scrolls.length-1);camera.position.z=5-n*18;camera.position.x=Math.sin(n*.8)*.65;camera.position.y=2.2+Math.sin(n*1.2)*.18;camera.rotation.y=-camera.position.x*.04;gold.position.z=camera.position.z-8;warm.position.z=camera.position.z-28;renderer.render(scene,camera)}
+animate();addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+})();
 </script></body></html>
