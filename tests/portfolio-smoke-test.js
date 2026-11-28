@@ -1,0 +1,21 @@
+const fs=require('fs');const assert=require('assert');const html=fs.readFileSync('index.html','utf8');
+for(const id of ['home','about','work','book','contact'])assert(html.includes('id="'+id+'"'),'Missing section: '+id);
+assert(html.includes('.reveal{opacity:1;transform:none}'),'Content must be visible by default');
+assert(html.includes("document.documentElement.classList.add('reveal-motion')"),'Reveal motion must be enabled only after observer setup');
+assert(html.includes("if(!canvas||!window.THREE)"),'Missing no-Three fallback');
+assert(html.includes('catch(err){canvas.style.display=\'none\''),'Missing WebGL creation fallback');
+assert(html.includes('prefers-reduced-motion:reduce'),'Missing reduced-motion support');
+assert(html.includes('IntersectionObserver'),'Missing progressive reveal observer');
+assert(html.includes('id="hud-label"'),'Missing chapter HUD');
+assert(html.includes('Bank Analytics'),'Bank project missing');
+assert(html.includes('Logistics & Supply Chain'),'Logistics project missing');
+assert(html.includes('Sales Performance'),'Sales project missing');
+assert(html.includes('23 & Confused'),'Author/book section missing');
+assert(html.includes('bhupendra272003/Portfolio/main/photo.jpg')||html.includes('photo.jpg'),'Profile photo reference missing');
+assert(html.includes('mailto:bhupendrasinghdeora24@gmail.com'),'Contact email link missing');
+console.log('Portfolio smoke checks passed.');
+
+assert(html.includes('innerWidth<820?1.15:1.5'),'Missing adaptive mobile pixel ratio');
+assert(html.includes('now-lastRender< (innerWidth<820?40:24)'),'Missing frame pacing for performance');
+assert(html.includes('pointerType===\'touch\''),'Touch input should avoid pointer parallax');
+assert(html.includes(':focus-visible'),'Missing keyboard-visible focus styles');
