@@ -14,3 +14,8 @@ assert(html.includes('23 & Confused'),'Author/book section missing');
 assert(html.includes('bhupendra272003/Portfolio/main/photo.jpg')||html.includes('photo.jpg'),'Profile photo reference missing');
 assert(html.includes('mailto:bhupendrasinghdeora24@gmail.com'),'Contact email link missing');
 console.log('Portfolio smoke checks passed.');
+
+assert(html.includes('innerWidth<820?1.15:1.5'),'Missing adaptive mobile pixel ratio');
+assert(html.includes('now-lastRender< (innerWidth<820?40:24)'),'Missing frame pacing for performance');
+assert(html.includes('pointerType===\'touch\''),'Touch input should avoid pointer parallax');
+assert(html.includes(':focus-visible'),'Missing keyboard-visible focus styles');
