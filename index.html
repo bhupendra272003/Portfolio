@@ -48,4 +48,11 @@ addEventListener('scroll',update);update();
 function animate(){requestAnimationFrame(animate);const n=scrollYNorm*(scrolls.length-1);camera.position.z=5-n*18;camera.position.x=Math.sin(n*.8)*.65;camera.position.y=2.2+Math.sin(n*1.2)*.18;camera.rotation.y=-camera.position.x*.04;gold.position.z=camera.position.z-8;warm.position.z=camera.position.z-28;renderer.render(scene,camera)}
 animate();addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
 })();
-</script></body></html>
+</script>
+<style>
+.img-fallback{display:block;width:100%;min-height:160px;background:linear-gradient(135deg,#221720,#453327,#17151d);color:#e7c985;object-fit:cover}.image-missing{display:flex;align-items:center;justify-content:center;min-height:160px;background:linear-gradient(135deg,#221720,#453327,#17151d);color:#e7c985;font:600 14px Cinzel;text-align:center;padding:20px;border:1px solid #b9955855}
+</style>
+<script>
+(()=>{document.querySelectorAll('img').forEach(img=>{img.addEventListener('error',function(){if(this.dataset.fallbackTried)return;this.dataset.fallbackTried='1';if(this.src.includes('amazonaws.com')){this.src='https://covers.openlibrary.org/b/olid/OL27665070M-L.jpg';return;}if(this.src.includes('photo.jpg')){this.style.display='none';return;}const seed=(this.alt||'portfolio-image').toLowerCase().replace(/[^a-z0-9]+/g,'-').slice(0,45)||'portfolio-image';this.src='https://picsum.photos/seed/'+seed+'/1000/650';});});})();
+</script>
+</body></html>
