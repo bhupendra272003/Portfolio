@@ -56,3 +56,14 @@ animate();addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;ca
 (()=>{document.querySelectorAll('img').forEach(img=>{img.addEventListener('error',function(){if(this.dataset.fallbackTried)return;this.dataset.fallbackTried='1';if(this.src.includes('amazonaws.com')){this.src='https://covers.openlibrary.org/b/olid/OL27665070M-L.jpg';return;}if(this.src.includes('photo.jpg')){this.style.display='none';return;}const seed=(this.alt||'portfolio-image').toLowerCase().replace(/[^a-z0-9]+/g,'-').slice(0,45)||'portfolio-image';this.src='https://picsum.photos/seed/'+seed+'/1000/650';});});})();
 </script>
 </body></html>
+<style id="cinematic-reference-inspired">
+/* cinematic portfolio refinement inspired by immersive WebGL storytelling */
+:root{--gold:#e2bd77;--cream:#f2e4c4;--deep:#08080b;--wine:#24131b}
+body{background:#050507;color:var(--cream)}header{padding:13px 18px;border:1px solid #c7a15b55;background:#09090bd9;backdrop-filter:blur(14px)}header span{font-size:clamp(9px,1.3vw,12px)}
+.chapter{min-height:110svh;padding:10vh clamp(5vw,8vw,12vw);align-items:center}.content{width:min(760px,100%);position:relative;border:1px solid #d5b46c44;background:linear-gradient(135deg,#0a090de8,#1a1117c9);box-shadow:0 30px 100px #000a,inset 0 0 40px #d6ad5a08;backdrop-filter:blur(14px);padding:clamp(22px,4vw,52px)}
+h1{letter-spacing:.04em;text-shadow:0 0 35px #d8b56b24}h2{letter-spacing:.02em}.eyebrow{display:flex;gap:12px;align-items:center}.eyebrow:after{content:'';height:1px;flex:1;background:linear-gradient(90deg,#d7b66f66,transparent)}
+.tile{border-color:#d5b46c55;transition:transform .35s,border-color .35s,box-shadow .35s}.tile:hover{transform:translateY(-6px);border-color:#d7b66f;box-shadow:0 25px 65px #000a}.tile img{filter:saturate(.72) contrast(1.08);transition:filter .4s}.tile:hover img{filter:saturate(1) contrast(1.1)}.button{background:#0d0b0e99}.button:hover{box-shadow:0 0 25px #d7b66f44}
+.chapter:nth-child(even) .content{text-align:left}.chapter:nth-child(even) .buttons{justify-content:flex-start}.chapter:nth-child(even) p{margin-left:0}.chapter:nth-child(even) .grid{justify-content:flex-start}
+#nav button{transition:transform .25s,box-shadow .25s}#nav button:hover{transform:scale(1.5)}
+@media(max-width:700px){.chapter{min-height:100svh;padding:9vh 5vw 7vh;align-items:center}.content{padding:22px 18px;max-height:85svh;overflow:auto}.chapter:nth-child(even) .content{text-align:left}.grid{max-height:none;overflow:visible}.tile{width:100%}header{left:3vw;right:3vw;top:10px}.down{bottom:12px;font-size:9px}}
+</style>
