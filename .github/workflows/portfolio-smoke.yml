@@ -1,0 +1,20 @@
+name: Portfolio Smoke Test
+
+on:
+  push:
+    branches: [main, cinematic-3d-rebuild]
+  pull_request:
+    branches: [main]
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run static portfolio checks
+        run: node tests/portfolio-smoke-test.js
